@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		ECBD5B862B2074BF00AB2C48 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBD5B852B2074BF00AB2C48 /* AppDelegate.swift */; };
 		ECBD5B882B2074BF00AB2C48 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBD5B872B2074BF00AB2C48 /* SceneDelegate.swift */; };
-		ECBD5B8A2B2074BF00AB2C48 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBD5B892B2074BF00AB2C48 /* ViewController.swift */; };
+		ECBD5B8A2B2074BF00AB2C48 /* ProductListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBD5B892B2074BF00AB2C48 /* ProductListViewController.swift */; };
 		ECBD5B8D2B2074BF00AB2C48 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECBD5B8B2B2074BF00AB2C48 /* Main.storyboard */; };
 		ECBD5B902B2074BF00AB2C48 /* MVVM_Dummy.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ECBD5B8E2B2074BF00AB2C48 /* MVVM_Dummy.xcdatamodeld */; };
 		ECBD5B922B2074C000AB2C48 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECBD5B912B2074C000AB2C48 /* Assets.xcassets */; };
@@ -17,6 +17,12 @@
 		ECBD5BA02B2074C000AB2C48 /* MVVM_DummyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBD5B9F2B2074C000AB2C48 /* MVVM_DummyTests.swift */; };
 		ECBD5BAA2B2074C000AB2C48 /* MVVM_DummyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBD5BA92B2074C000AB2C48 /* MVVM_DummyUITests.swift */; };
 		ECBD5BAC2B2074C000AB2C48 /* MVVM_DummyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBD5BAB2B2074C000AB2C48 /* MVVM_DummyUITestsLaunchTests.swift */; };
+		ECBD5BC62B2088D800AB2C48 /* navBarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBD5BC52B2088D800AB2C48 /* navBarExtension.swift */; };
+		ECBD5BC82B20898700AB2C48 /* config.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBD5BC72B20898700AB2C48 /* config.swift */; };
+		ECBD5BCA2B209FCA00AB2C48 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBD5BC92B209FCA00AB2C48 /* MainViewController.swift */; };
+		ECBD5BCC2B20AC4000AB2C48 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBD5BCB2B20AC3F00AB2C48 /* CategoryViewController.swift */; };
+		ECBD5BCE2B20AC4F00AB2C48 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBD5BCD2B20AC4F00AB2C48 /* SettingsViewController.swift */; };
+		ECBD5BD02B2194FB00AB2C48 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBD5BCF2B2194FA00AB2C48 /* TabBarViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +46,7 @@
 		ECBD5B822B2074BF00AB2C48 /* MVVM_Dummy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVVM_Dummy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECBD5B852B2074BF00AB2C48 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ECBD5B872B2074BF00AB2C48 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		ECBD5B892B2074BF00AB2C48 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		ECBD5B892B2074BF00AB2C48 /* ProductListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListViewController.swift; sourceTree = "<group>"; };
 		ECBD5B8C2B2074BF00AB2C48 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ECBD5B8F2B2074BF00AB2C48 /* MVVM_Dummy.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MVVM_Dummy.xcdatamodel; sourceTree = "<group>"; };
 		ECBD5B912B2074C000AB2C48 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -51,6 +57,12 @@
 		ECBD5BA52B2074C000AB2C48 /* MVVM_DummyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MVVM_DummyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECBD5BA92B2074C000AB2C48 /* MVVM_DummyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVM_DummyUITests.swift; sourceTree = "<group>"; };
 		ECBD5BAB2B2074C000AB2C48 /* MVVM_DummyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVM_DummyUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		ECBD5BC52B2088D800AB2C48 /* navBarExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = navBarExtension.swift; sourceTree = "<group>"; };
+		ECBD5BC72B20898700AB2C48 /* config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = config.swift; sourceTree = "<group>"; };
+		ECBD5BC92B209FCA00AB2C48 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		ECBD5BCB2B20AC3F00AB2C48 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
+		ECBD5BCD2B20AC4F00AB2C48 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		ECBD5BCF2B2194FA00AB2C48 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,12 +113,16 @@
 		ECBD5B842B2074BF00AB2C48 /* MVVM_Dummy */ = {
 			isa = PBXGroup;
 			children = (
-				ECBD5B852B2074BF00AB2C48 /* AppDelegate.swift */,
-				ECBD5B872B2074BF00AB2C48 /* SceneDelegate.swift */,
-				ECBD5B892B2074BF00AB2C48 /* ViewController.swift */,
-				ECBD5B8B2B2074BF00AB2C48 /* Main.storyboard */,
-				ECBD5B912B2074C000AB2C48 /* Assets.xcassets */,
-				ECBD5B932B2074C000AB2C48 /* LaunchScreen.storyboard */,
+				ECBD5BB82B20757900AB2C48 /* Application */,
+				ECBD5BC42B207EF600AB2C48 /* NavigationBar */,
+				ECBD5BC32B207EDC00AB2C48 /* TabBar */,
+				ECBD5BBB2B2075B700AB2C48 /* Utility */,
+				ECBD5BB92B20759600AB2C48 /* Constant */,
+				ECBD5BBC2B2075C400AB2C48 /* Helper */,
+				ECBD5BBE2B2075DF00AB2C48 /* Storyboards */,
+				ECBD5BBA2B2075AA00AB2C48 /* Extensions */,
+				ECBD5BBD2B2075CC00AB2C48 /* Screens */,
+				ECBD5BBF2B2075F400AB2C48 /* Resources */,
 				ECBD5B962B2074C000AB2C48 /* Info.plist */,
 				ECBD5B8E2B2074BF00AB2C48 /* MVVM_Dummy.xcdatamodeld */,
 			);
@@ -128,6 +144,112 @@
 				ECBD5BAB2B2074C000AB2C48 /* MVVM_DummyUITestsLaunchTests.swift */,
 			);
 			path = MVVM_DummyUITests;
+			sourceTree = "<group>";
+		};
+		ECBD5BB82B20757900AB2C48 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				ECBD5B852B2074BF00AB2C48 /* AppDelegate.swift */,
+				ECBD5B872B2074BF00AB2C48 /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		ECBD5BB92B20759600AB2C48 /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				ECBD5BC72B20898700AB2C48 /* config.swift */,
+			);
+			path = Constant;
+			sourceTree = "<group>";
+		};
+		ECBD5BBA2B2075AA00AB2C48 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				ECBD5BC52B2088D800AB2C48 /* navBarExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		ECBD5BBB2B2075B700AB2C48 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		ECBD5BBC2B2075C400AB2C48 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		ECBD5BBD2B2075CC00AB2C48 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				ECBD5BC02B20760300AB2C48 /* View */,
+				ECBD5BC22B2077E400AB2C48 /* Model */,
+				ECBD5BC12B2077D400AB2C48 /* ViewModel */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		ECBD5BBE2B2075DF00AB2C48 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				ECBD5B8B2B2074BF00AB2C48 /* Main.storyboard */,
+				ECBD5B932B2074C000AB2C48 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		ECBD5BBF2B2075F400AB2C48 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				ECBD5B912B2074C000AB2C48 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		ECBD5BC02B20760300AB2C48 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				ECBD5B892B2074BF00AB2C48 /* ProductListViewController.swift */,
+				ECBD5BCB2B20AC3F00AB2C48 /* CategoryViewController.swift */,
+				ECBD5BCD2B20AC4F00AB2C48 /* SettingsViewController.swift */,
+				ECBD5BC92B209FCA00AB2C48 /* MainViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		ECBD5BC12B2077D400AB2C48 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		ECBD5BC22B2077E400AB2C48 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		ECBD5BC32B207EDC00AB2C48 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				ECBD5BCF2B2194FA00AB2C48 /* TabBarViewController.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		ECBD5BC42B207EF600AB2C48 /* NavigationBar */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = NavigationBar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,9 +383,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECBD5BCC2B20AC4000AB2C48 /* CategoryViewController.swift in Sources */,
+				ECBD5BCE2B20AC4F00AB2C48 /* SettingsViewController.swift in Sources */,
+				ECBD5BCA2B209FCA00AB2C48 /* MainViewController.swift in Sources */,
 				ECBD5B902B2074BF00AB2C48 /* MVVM_Dummy.xcdatamodeld in Sources */,
-				ECBD5B8A2B2074BF00AB2C48 /* ViewController.swift in Sources */,
+				ECBD5BC62B2088D800AB2C48 /* navBarExtension.swift in Sources */,
+				ECBD5B8A2B2074BF00AB2C48 /* ProductListViewController.swift in Sources */,
+				ECBD5BC82B20898700AB2C48 /* config.swift in Sources */,
 				ECBD5B862B2074BF00AB2C48 /* AppDelegate.swift in Sources */,
+				ECBD5BD02B2194FB00AB2C48 /* TabBarViewController.swift in Sources */,
 				ECBD5B882B2074BF00AB2C48 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

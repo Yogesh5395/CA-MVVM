@@ -1,19 +1,18 @@
 //
-//  ViewController.swift
+//  TabBarViewController.swift
 //  MVVM_Dummy
 //
-//  Created by Yogesh on 06/12/23.
+//  Created by Yogesh on 07/12/23.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
+class TabBarViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
         // Do any additional setup after loading the view.
     }
 
-
 }
-
