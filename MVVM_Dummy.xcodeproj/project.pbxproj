@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		ECBD5B862B2074BF00AB2C48 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBD5B852B2074BF00AB2C48 /* AppDelegate.swift */; };
 		ECBD5B882B2074BF00AB2C48 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBD5B872B2074BF00AB2C48 /* SceneDelegate.swift */; };
-		ECBD5B8A2B2074BF00AB2C48 /* ProductListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBD5B892B2074BF00AB2C48 /* ProductListViewController.swift */; };
 		ECBD5B8D2B2074BF00AB2C48 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECBD5B8B2B2074BF00AB2C48 /* Main.storyboard */; };
 		ECBD5B902B2074BF00AB2C48 /* MVVM_Dummy.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ECBD5B8E2B2074BF00AB2C48 /* MVVM_Dummy.xcdatamodeld */; };
 		ECBD5B922B2074C000AB2C48 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECBD5B912B2074C000AB2C48 /* Assets.xcassets */; };
@@ -23,6 +22,10 @@
 		ECBD5BCC2B20AC4000AB2C48 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBD5BCB2B20AC3F00AB2C48 /* CategoryViewController.swift */; };
 		ECBD5BCE2B20AC4F00AB2C48 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBD5BCD2B20AC4F00AB2C48 /* SettingsViewController.swift */; };
 		ECBD5BD02B2194FB00AB2C48 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBD5BCF2B2194FA00AB2C48 /* TabBarViewController.swift */; };
+		ECBD5BD22B21A51700AB2C48 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBD5BD12B21A51700AB2C48 /* BaseViewController.swift */; };
+		ECBD5BD42B21ABA600AB2C48 /* ProductTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBD5BD32B21ABA600AB2C48 /* ProductTableViewController.swift */; };
+		ECBD5BD92B21B23C00AB2C48 /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBD5BD72B21B23C00AB2C48 /* ProductTableViewCell.swift */; };
+		ECBD5BDA2B21B23C00AB2C48 /* ProductTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ECBD5BD82B21B23C00AB2C48 /* ProductTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,7 +49,6 @@
 		ECBD5B822B2074BF00AB2C48 /* MVVM_Dummy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVVM_Dummy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECBD5B852B2074BF00AB2C48 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ECBD5B872B2074BF00AB2C48 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		ECBD5B892B2074BF00AB2C48 /* ProductListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListViewController.swift; sourceTree = "<group>"; };
 		ECBD5B8C2B2074BF00AB2C48 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ECBD5B8F2B2074BF00AB2C48 /* MVVM_Dummy.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MVVM_Dummy.xcdatamodel; sourceTree = "<group>"; };
 		ECBD5B912B2074C000AB2C48 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -63,6 +65,10 @@
 		ECBD5BCB2B20AC3F00AB2C48 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		ECBD5BCD2B20AC4F00AB2C48 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		ECBD5BCF2B2194FA00AB2C48 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		ECBD5BD12B21A51700AB2C48 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		ECBD5BD32B21ABA600AB2C48 /* ProductTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableViewController.swift; sourceTree = "<group>"; };
+		ECBD5BD72B21B23C00AB2C48 /* ProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
+		ECBD5BD82B21B23C00AB2C48 /* ProductTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,10 +221,12 @@
 		ECBD5BC02B20760300AB2C48 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				ECBD5B892B2074BF00AB2C48 /* ProductListViewController.swift */,
+				ECBD5BD32B21ABA600AB2C48 /* ProductTableViewController.swift */,
 				ECBD5BCB2B20AC3F00AB2C48 /* CategoryViewController.swift */,
 				ECBD5BCD2B20AC4F00AB2C48 /* SettingsViewController.swift */,
 				ECBD5BC92B209FCA00AB2C48 /* MainViewController.swift */,
+				ECBD5BD72B21B23C00AB2C48 /* ProductTableViewCell.swift */,
+				ECBD5BD82B21B23C00AB2C48 /* ProductTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -248,6 +256,7 @@
 		ECBD5BC42B207EF600AB2C48 /* NavigationBar */ = {
 			isa = PBXGroup;
 			children = (
+				ECBD5BD12B21A51700AB2C48 /* BaseViewController.swift */,
 			);
 			path = NavigationBar;
 			sourceTree = "<group>";
@@ -357,6 +366,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ECBD5B952B2074C000AB2C48 /* LaunchScreen.storyboard in Resources */,
+				ECBD5BDA2B21B23C00AB2C48 /* ProductTableViewCell.xib in Resources */,
 				ECBD5B922B2074C000AB2C48 /* Assets.xcassets in Resources */,
 				ECBD5B8D2B2074BF00AB2C48 /* Main.storyboard in Resources */,
 			);
@@ -385,10 +395,12 @@
 			files = (
 				ECBD5BCC2B20AC4000AB2C48 /* CategoryViewController.swift in Sources */,
 				ECBD5BCE2B20AC4F00AB2C48 /* SettingsViewController.swift in Sources */,
+				ECBD5BD22B21A51700AB2C48 /* BaseViewController.swift in Sources */,
 				ECBD5BCA2B209FCA00AB2C48 /* MainViewController.swift in Sources */,
+				ECBD5BD42B21ABA600AB2C48 /* ProductTableViewController.swift in Sources */,
 				ECBD5B902B2074BF00AB2C48 /* MVVM_Dummy.xcdatamodeld in Sources */,
 				ECBD5BC62B2088D800AB2C48 /* navBarExtension.swift in Sources */,
-				ECBD5B8A2B2074BF00AB2C48 /* ProductListViewController.swift in Sources */,
+				ECBD5BD92B21B23C00AB2C48 /* ProductTableViewCell.swift in Sources */,
 				ECBD5BC82B20898700AB2C48 /* config.swift in Sources */,
 				ECBD5B862B2074BF00AB2C48 /* AppDelegate.swift in Sources */,
 				ECBD5BD02B2194FB00AB2C48 /* TabBarViewController.swift in Sources */,
