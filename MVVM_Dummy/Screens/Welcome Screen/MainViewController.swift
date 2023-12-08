@@ -33,7 +33,7 @@ class MainViewController: UIViewController {
         }
         
         // Create a new instance of the desired new root view controller
-        let storyboard = UIStoryboard(name: "Main", bundle: nil) // Replace "Main" with your storyboard name if different
+        let storyboard = UIStoryboard(name: StoryboardName.main, bundle: nil) // Replace "Main" with your storyboard name if different
         guard let newRootVC = storyboard.instantiateViewController(withIdentifier: "TabBarViewController") as? TabBarViewController else {
             print("TabBarViewController could not be instantiated")
             return

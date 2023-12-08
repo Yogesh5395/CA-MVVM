@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ProductTableViewController: UITableViewController {
+class BaseTableViewController: UITableViewController {
 
     let containerView = UIView()
     let segmentedControl = UISegmentedControl(items: ["All", "Voicemail"])
@@ -18,7 +18,7 @@ class ProductTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupNavigationItems(leftButtonTitle: "", rightButtonTitle: "", logoImageName: logoImageName, showLogoImage: false, backgroundColor: .white)
+        setupNavigationItems(leftButtonTitle: "", rightButtonTitle: "", logoImageName: ImageName.logoImageName, showLogoImage: false, backgroundColor: .white)
         
         setupTitleLabel()
     }
@@ -28,7 +28,7 @@ class ProductTableViewController: UITableViewController {
         let headerView = UIView()
         headerView.translatesAutoresizingMaskIntoConstraints = false
         
-        titleLabel.text = "Messages"
+        titleLabel.text = "Products"
         titleLabel.font = UIFont.boldSystemFont(ofSize: 34)
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         headerView.addSubview(titleLabel)

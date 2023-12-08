@@ -7,15 +7,16 @@
 
 import UIKit
 
-class CategoryViewController: UIViewController {
+class ChildViewController: UIViewController {
     
     let containerView = UIView()
     let segmentedControl = UISegmentedControl(items: ["All", "Favourite"])
+    var childTableViewController = UITableViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupNavigationItems(leftButtonTitle: "", rightButtonTitle: "", logoImageName: logoImageName, showLogoImage: false, backgroundColor: .white)
+        setupNavigationItems(leftButtonTitle: "", rightButtonTitle: "", logoImageName: ImageName.logoImageName, showLogoImage: false, backgroundColor: .white)
         
         setupSegmentedControl()
         setupContainerView()
@@ -77,11 +78,11 @@ class CategoryViewController: UIViewController {
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil) // Replace "Main" with your storyboard name if different
         
-        guard let newRootVC = storyboard.instantiateViewController(withIdentifier: "ProductTableViewController") as? ProductTableViewController else {
+        guard let newRootVC = storyboard.instantiateViewController(withIdentifier: "BaseTableViewController") as? BaseTableViewController else {
             return
         }
         
-        let childTableViewController = newRootVC
+        childTableViewController = newRootVC
         addChild(childTableViewController)
         
         // Set up the child's view
@@ -139,7 +140,7 @@ class CategoryViewController: UIViewController {
 }
 
 // MARK: - UITableViewDelegate & UITableViewDataSource
-extension CategoryViewController: UITableViewDelegate, UITableViewDataSource {
+extension ChildViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // Return the number of rows for the table
         return 20
@@ -148,7 +149,7 @@ extension CategoryViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // Dequeue and configure the cell
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = "Row \(indexPath.row)"
+        cell.textLabel?.text = "indexPath.row: \(indexPath.row)"
         return cell
     }
     
