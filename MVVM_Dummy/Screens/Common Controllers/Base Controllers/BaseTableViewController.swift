@@ -8,22 +8,27 @@
 import UIKit
 
 class BaseTableViewController: UITableViewController {
+//    func updateSearchResults(for searchController: UISearchController) {
+//        let searchText = searchController.searchBar.text
+//        print("searchcontroller: ",searchText)
+//    }
+    
 
     let containerView = UIView()
     let segmentedControl = UISegmentedControl(items: ["All", "Voicemail"])
     
     let titleLabel = UILabel()
-    let searchBar = UISearchBar()
+//    let searchController = UISearchController(searchResultsController: nil)
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupNavigationItems(leftButtonTitle: "", rightButtonTitle: "", logoImageName: ImageName.logoImageName, showLogoImage: false, backgroundColor: .white)
         
-        setupTitleLabel()
+        setupTitleAndSearchBar()
     }
     
-    private func setupTitleLabel() {
+    private func setupTitleAndSearchBar() {
         
         let headerView = UIView()
         headerView.translatesAutoresizingMaskIntoConstraints = false
@@ -34,9 +39,12 @@ class BaseTableViewController: UITableViewController {
         headerView.addSubview(titleLabel)
         
         // Configure the searchBar
-        searchBar.translatesAutoresizingMaskIntoConstraints = false
-        searchBar.setBackgroundImage(UIImage(), for: .any, barMetrics: .default)
-        headerView.addSubview(searchBar)
+//        searchController.searchBar.translatesAutoresizingMaskIntoConstraints = false
+//        searchController.searchBar.setBackgroundImage(UIImage(), for: .any, barMetrics: .default)
+//        searchController.searchResultsUpdater = self
+//        searchController.obscuresBackgroundDuringPresentation = false
+//        searchController.searchBar.placeholder = "search title"
+//        headerView.addSubview(searchController.searchBar)
         
         // Define the containerView for Auto Layout
         let containerView = UIView()
@@ -58,16 +66,17 @@ class BaseTableViewController: UITableViewController {
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: headerView.topAnchor, constant: 0),
             titleLabel.leadingAnchor.constraint(equalTo: headerView.leadingAnchor, constant: 16),
-            titleLabel.trailingAnchor.constraint(equalTo: headerView.trailingAnchor, constant: -16)
+            titleLabel.trailingAnchor.constraint(equalTo: headerView.trailingAnchor, constant: -16),
+            titleLabel.bottomAnchor.constraint(equalTo: headerView.bottomAnchor, constant: -20)
         ])
         
         // Constraints for the searchBar
-        NSLayoutConstraint.activate([
-            searchBar.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 20),
-            searchBar.leadingAnchor.constraint(equalTo: headerView.leadingAnchor, constant: 16),
-            searchBar.trailingAnchor.constraint(equalTo: headerView.trailingAnchor, constant: -16),
-            searchBar.bottomAnchor.constraint(equalTo: headerView.bottomAnchor, constant: -20)
-        ])
+//        NSLayoutConstraint.activate([
+//            searchController.searchBar.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 20),
+//            searchController.searchBar.leadingAnchor.constraint(equalTo: headerView.leadingAnchor, constant: 16),
+//            searchController.searchBar.trailingAnchor.constraint(equalTo: headerView.trailingAnchor, constant: -16),
+//            searchController.searchBar.bottomAnchor.constraint(equalTo: headerView.bottomAnchor, constant: -20)
+//        ])
         
         // Set the bottom constraint for the headerView to the containerView
         let bottomConstraint = headerView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor)

@@ -8,6 +8,8 @@
 import UIKit
 
 class SettingsViewController: ChildViewController {
+    
+//    let searchController = UISearchController(searchResultsController: nil)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,6 +18,8 @@ class SettingsViewController: ChildViewController {
         
         childTableViewController.tableView.register(UINib(nibName: CellId_and_Nib_ProductList_ViewController.ProductCell, bundle: nil), forCellReuseIdentifier: CellId_and_Nib_ProductList_ViewController.ProductCell)
         
+//        configSearchController()
+        
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -23,4 +27,19 @@ class SettingsViewController: ChildViewController {
         return cell
     }
     
+//    func configSearchController() {
+//        searchController.searchResultsUpdater = self
+//        searchController.obscuresBackgroundDuringPresentation = false
+//        searchController.searchBar.placeholder = "Search"
+//        navigationItem.searchController = searchController
+//        definesPresentationContext = true
+//    }
+    
 }
+
+//extension SettingsViewController: UISearchResultsUpdating {
+//    func updateSearchResults(for searchController: UISearchController) {
+//        let searchText = searchController.searchBar.text
+//        print("searchText: ",searchText)
+//    }
+//}

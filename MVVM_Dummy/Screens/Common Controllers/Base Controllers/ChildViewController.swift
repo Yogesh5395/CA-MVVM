@@ -13,16 +13,27 @@ class ChildViewController: UIViewController {
     let segmentedControl = UISegmentedControl(items: ["All", "Favourite"])
     var childTableViewController = UITableViewController()
     
+    let searchController = UISearchController(searchResultsController: nil)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupNavigationItems(leftButtonTitle: "", rightButtonTitle: "", logoImageName: ImageName.logoImageName, showLogoImage: false, backgroundColor: .white)
         
+        configSearchController()
         setupSegmentedControl()
         setupContainerView()
         
         // Set up the child UITableViewController
         setupChildTableViewController()
+    }
+    
+    func configSearchController() {
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search"
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
     }
     
     private func setupContainerView() {
@@ -154,4 +165,11 @@ extension ChildViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     // Implement other delegate and dataSource methods as needed
+}
+
+extension ChildViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        let searchText = searchController.searchBar.text
+        print("searchText: ",searchText)
+    }
 }

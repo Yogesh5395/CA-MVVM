@@ -18,6 +18,7 @@ enum Event {
 final class ProductViewModel {
     
     var products: [Product] = []
+    var filteredProducts: [Product] = []
     var eventHandler: ((_ event:Event) -> Void)? // Data Binding Closure
     
     func fetchProducts() {
