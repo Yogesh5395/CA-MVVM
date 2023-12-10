@@ -19,5 +19,5 @@ enum Main_StoryBordID {
 
 //CellId_and_Nib_StoryBordID
 enum CellId_and_Nib_ProductList_ViewController {
-    static let ProductTableViewCell = "ProductTableViewCell"
+    static let ProductCell = "ProductCell"
 }

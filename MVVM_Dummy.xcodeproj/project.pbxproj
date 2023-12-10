@@ -10,6 +10,10 @@
 		EC27AD892B22F8B700A4ED1F /* ProductList_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC27AD882B22F8B700A4ED1F /* ProductList_ViewController.swift */; };
 		EC27AD8D2B23027C00A4ED1F /* Storybord.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC27AD8C2B23027C00A4ED1F /* Storybord.swift */; };
 		EC27AD8F2B23032700A4ED1F /* ImageName.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC27AD8E2B23032700A4ED1F /* ImageName.swift */; };
+		EC27AD912B23166400A4ED1F /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC27AD902B23166400A4ED1F /* Product.swift */; };
+		EC470C5D2B259C8C003C3063 /* ProductList_ViewController + tableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC470C5C2B259C8C003C3063 /* ProductList_ViewController + tableView.swift */; };
+		ECA04AFB2B25B43200F6B117 /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA04AF92B25B43200F6B117 /* ProductCell.swift */; };
+		ECA04AFC2B25B43200F6B117 /* ProductCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ECA04AFA2B25B43200F6B117 /* ProductCell.xib */; };
 		ECBD5B862B2074BF00AB2C48 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBD5B852B2074BF00AB2C48 /* AppDelegate.swift */; };
 		ECBD5B882B2074BF00AB2C48 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBD5B872B2074BF00AB2C48 /* SceneDelegate.swift */; };
 		ECBD5B8D2B2074BF00AB2C48 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECBD5B8B2B2074BF00AB2C48 /* Main.storyboard */; };
@@ -27,8 +31,10 @@
 		ECBD5BD02B2194FB00AB2C48 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBD5BCF2B2194FA00AB2C48 /* TabBarViewController.swift */; };
 		ECBD5BD22B21A51700AB2C48 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBD5BD12B21A51700AB2C48 /* BaseViewController.swift */; };
 		ECBD5BD42B21ABA600AB2C48 /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBD5BD32B21ABA600AB2C48 /* BaseTableViewController.swift */; };
-		ECBD5BD92B21B23C00AB2C48 /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBD5BD72B21B23C00AB2C48 /* ProductTableViewCell.swift */; };
-		ECBD5BDA2B21B23C00AB2C48 /* ProductTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ECBD5BD82B21B23C00AB2C48 /* ProductTableViewCell.xib */; };
+		ECF0CCD42B23591D00749C03 /* EndPointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF0CCD32B23591D00749C03 /* EndPointType.swift */; };
+		ECF0CCD62B235B7300749C03 /* ProductEndPointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF0CCD52B235B7300749C03 /* ProductEndPointType.swift */; };
+		ECF0CCD82B235FC500749C03 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF0CCD72B235FC500749C03 /* APIManager.swift */; };
+		ECF0CCDA2B236D6E00749C03 /* ProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF0CCD92B236D6E00749C03 /* ProductViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +58,10 @@
 		EC27AD882B22F8B700A4ED1F /* ProductList_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductList_ViewController.swift; sourceTree = "<group>"; };
 		EC27AD8C2B23027C00A4ED1F /* Storybord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storybord.swift; sourceTree = "<group>"; };
 		EC27AD8E2B23032700A4ED1F /* ImageName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageName.swift; sourceTree = "<group>"; };
+		EC27AD902B23166400A4ED1F /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		EC470C5C2B259C8C003C3063 /* ProductList_ViewController + tableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProductList_ViewController + tableView.swift"; sourceTree = "<group>"; };
+		ECA04AF92B25B43200F6B117 /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
+		ECA04AFA2B25B43200F6B117 /* ProductCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductCell.xib; sourceTree = "<group>"; };
 		ECBD5B822B2074BF00AB2C48 /* MVVM_Dummy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVVM_Dummy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECBD5B852B2074BF00AB2C48 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ECBD5B872B2074BF00AB2C48 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -73,8 +83,10 @@
 		ECBD5BCF2B2194FA00AB2C48 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		ECBD5BD12B21A51700AB2C48 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		ECBD5BD32B21ABA600AB2C48 /* BaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
-		ECBD5BD72B21B23C00AB2C48 /* ProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
-		ECBD5BD82B21B23C00AB2C48 /* ProductTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductTableViewCell.xib; sourceTree = "<group>"; };
+		ECF0CCD32B23591D00749C03 /* EndPointType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPointType.swift; sourceTree = "<group>"; };
+		ECF0CCD52B235B7300749C03 /* ProductEndPointType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductEndPointType.swift; sourceTree = "<group>"; };
+		ECF0CCD72B235FC500749C03 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		ECF0CCD92B236D6E00749C03 /* ProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,8 +160,6 @@
 		EC27AD8B2B22FC1C00A4ED1F /* TableViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				ECBD5BD72B21B23C00AB2C48 /* ProductTableViewCell.swift */,
-				ECBD5BD82B21B23C00AB2C48 /* ProductTableViewCell.xib */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";
@@ -240,6 +250,8 @@
 		ECBD5BBB2B2075B700AB2C48 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				ECF0CCD32B23591D00749C03 /* EndPointType.swift */,
+				ECF0CCD52B235B7300749C03 /* ProductEndPointType.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -247,6 +259,7 @@
 		ECBD5BBC2B2075C400AB2C48 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				ECF0CCD72B235FC500749C03 /* APIManager.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -283,6 +296,9 @@
 			isa = PBXGroup;
 			children = (
 				EC27AD882B22F8B700A4ED1F /* ProductList_ViewController.swift */,
+				EC470C5C2B259C8C003C3063 /* ProductList_ViewController + tableView.swift */,
+				ECA04AF92B25B43200F6B117 /* ProductCell.swift */,
+				ECA04AFA2B25B43200F6B117 /* ProductCell.xib */,
 				EC27AD8B2B22FC1C00A4ED1F /* TableViewCell */,
 			);
 			path = View;
@@ -291,6 +307,7 @@
 		ECBD5BC12B2077D400AB2C48 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				ECF0CCD92B236D6E00749C03 /* ProductViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -298,6 +315,7 @@
 		ECBD5BC22B2077E400AB2C48 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				EC27AD902B23166400A4ED1F /* Product.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -423,7 +441,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ECBD5B952B2074C000AB2C48 /* LaunchScreen.storyboard in Resources */,
-				ECBD5BDA2B21B23C00AB2C48 /* ProductTableViewCell.xib in Resources */,
+				ECA04AFC2B25B43200F6B117 /* ProductCell.xib in Resources */,
 				ECBD5B922B2074C000AB2C48 /* Assets.xcassets in Resources */,
 				ECBD5B8D2B2074BF00AB2C48 /* Main.storyboard in Resources */,
 			);
@@ -451,17 +469,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				ECBD5BCC2B20AC4000AB2C48 /* CategoryViewController.swift in Sources */,
+				ECF0CCD82B235FC500749C03 /* APIManager.swift in Sources */,
 				ECBD5BCE2B20AC4F00AB2C48 /* SettingsViewController.swift in Sources */,
 				ECBD5BD22B21A51700AB2C48 /* BaseViewController.swift in Sources */,
 				ECBD5BCA2B209FCA00AB2C48 /* MainViewController.swift in Sources */,
+				ECF0CCD62B235B7300749C03 /* ProductEndPointType.swift in Sources */,
 				ECBD5BD42B21ABA600AB2C48 /* BaseTableViewController.swift in Sources */,
+				EC470C5D2B259C8C003C3063 /* ProductList_ViewController + tableView.swift in Sources */,
 				ECBD5B902B2074BF00AB2C48 /* MVVM_Dummy.xcdatamodeld in Sources */,
 				EC27AD8F2B23032700A4ED1F /* ImageName.swift in Sources */,
 				EC27AD8D2B23027C00A4ED1F /* Storybord.swift in Sources */,
 				ECBD5BC62B2088D800AB2C48 /* navBarExtension.swift in Sources */,
-				ECBD5BD92B21B23C00AB2C48 /* ProductTableViewCell.swift in Sources */,
+				ECA04AFB2B25B43200F6B117 /* ProductCell.swift in Sources */,
+				EC27AD912B23166400A4ED1F /* Product.swift in Sources */,
 				ECBD5BC82B20898700AB2C48 /* Constant.swift in Sources */,
+				ECF0CCDA2B236D6E00749C03 /* ProductViewModel.swift in Sources */,
 				ECBD5B862B2074BF00AB2C48 /* AppDelegate.swift in Sources */,
+				ECF0CCD42B23591D00749C03 /* EndPointType.swift in Sources */,
 				EC27AD892B22F8B700A4ED1F /* ProductList_ViewController.swift in Sources */,
 				ECBD5BD02B2194FB00AB2C48 /* TabBarViewController.swift in Sources */,
 				ECBD5B882B2074BF00AB2C48 /* SceneDelegate.swift in Sources */,
