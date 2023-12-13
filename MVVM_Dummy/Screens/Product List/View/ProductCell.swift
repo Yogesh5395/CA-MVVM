@@ -25,12 +25,6 @@ class ProductCell: UITableViewCell {
         }
     }
     
-//    var product: Product?{
-//        didSet {
-//            productDetailConfiguration()
-//        }
-//    }
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -47,16 +41,6 @@ class ProductCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
-//    func productDetailConfiguration() {
-//        guard let product else { return }
-//        productTitle.text = product.title
-//        productCategory.text = product.category
-//        productDescription.text = product.description
-//        productPrice.text = "$\(product.price)"
-//        productRating.setTitle("\(product.rating.rate)", for: .normal)
-////        productImageView.setImage(with: product.image)
-//    }
     
     func productDetailConfiguration() {
         guard let product = productVM else { return }
