@@ -36,7 +36,7 @@ class ProductList_ViewController: ChildViewController {
                 print("loading completed ...")
             case .dataLoad:
                 DispatchQueue.main.async {
-                    self.viewModel.filteredProducts = self.viewModel.products
+                    self.viewModel.filteredProductsVM = self.viewModel.productsVM
                     self.childTableViewController.tableView.reloadData()
                 }
             case .error(let error):

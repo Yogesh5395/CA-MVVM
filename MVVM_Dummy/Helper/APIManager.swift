@@ -23,7 +23,7 @@ final class APIManager {
     private var networkhandler = NetworkHandler()
     private var reponseHandler = ResponseHandler()
     
-    init(networkhandler: NetworkHandler = NetworkHandler(), responseHandler: ResponseHandler = ResponseHandler()) {
+   private init(networkhandler: NetworkHandler = NetworkHandler(), responseHandler: ResponseHandler = ResponseHandler()) {
         
         self.networkhandler = NetworkHandler()
         self.reponseHandler = ResponseHandler()

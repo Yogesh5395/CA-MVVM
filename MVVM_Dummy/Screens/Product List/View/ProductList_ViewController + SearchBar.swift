@@ -16,12 +16,12 @@ extension ProductList_ViewController {
         print("searchText: ",searchText)
         
         guard let searchText = searchController.searchBar.text, !searchText.isEmpty else {
-            viewModel.filteredProducts = viewModel.products
+            viewModel.filteredProductsVM = self.viewModel.productsVM
             self.childTableViewController.tableView.reloadData()
             return
         }
         
-        viewModel.filteredProducts = viewModel.products.filter { product in
+        viewModel.filteredProductsVM = viewModel.productsVM.filter { product in
             return product.title.lowercased().contains(searchText.lowercased())
         }
         

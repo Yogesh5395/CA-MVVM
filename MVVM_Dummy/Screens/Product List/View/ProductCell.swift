@@ -19,11 +19,17 @@ class ProductCell: UITableViewCell {
     @IBOutlet weak var productPrice: UILabel!
     @IBOutlet weak var buyButton: UIButton!
     
-    var product: Product?{
+    var productVM: SingleProductViewModel? {
         didSet {
             productDetailConfiguration()
         }
     }
+    
+//    var product: Product?{
+//        didSet {
+//            productDetailConfiguration()
+//        }
+//    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -42,8 +48,18 @@ class ProductCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+//    func productDetailConfiguration() {
+//        guard let product else { return }
+//        productTitle.text = product.title
+//        productCategory.text = product.category
+//        productDescription.text = product.description
+//        productPrice.text = "$\(product.price)"
+//        productRating.setTitle("\(product.rating.rate)", for: .normal)
+////        productImageView.setImage(with: product.image)
+//    }
+    
     func productDetailConfiguration() {
-        guard let product else { return }
+        guard let product = productVM else { return }
         productTitle.text = product.title
         productCategory.text = product.category
         productDescription.text = product.description
