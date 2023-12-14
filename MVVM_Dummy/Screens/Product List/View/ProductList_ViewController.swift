@@ -9,7 +9,7 @@ import UIKit
 
 class ProductList_ViewController: ChildViewController {
     
-    var viewModel = ProductViewModel()
+    var viewModel: ProductViewModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,7 +18,18 @@ class ProductList_ViewController: ChildViewController {
         
         childTableViewController.tableView.register(UINib(nibName: CellId_and_Nib_ProductList_ViewController.ProductCell, bundle: nil), forCellReuseIdentifier: CellId_and_Nib_ProductList_ViewController.ProductCell)
         
-        viewModel.fetchProducts()
+        configuration()
+    }
+    
+    func configuration(){
+        
+        let serviceImplementation = ProductServiceImpl()
+        let repo = ProductRepository(ProductServiceImplementation: serviceImplementation)
+        let useCase = ProductUseCase(repository: repo)
+        viewModel = ProductViewModel(product: useCase)
+        viewModel?.fetchProductList()
+        
+//        viewModel.fetchProducts()
         
         obsereEvent()
     }
@@ -26,7 +37,7 @@ class ProductList_ViewController: ChildViewController {
     // Data binding event observe karega - communication
     func obsereEvent() {
         
-        viewModel.eventHandler = { [weak self] event in
+        viewModel?.eventHandler = { [weak self] event in
             guard let self else {return}
             
             switch event {
@@ -36,8 +47,10 @@ class ProductList_ViewController: ChildViewController {
                 print("loading completed ...")
             case .dataLoad:
                 DispatchQueue.main.async {
-                    self.viewModel.filteredProductsVM = self.viewModel.productsVM
-                    self.childTableViewController.tableView.reloadData()
+                    if let products = self.viewModel?.productsVM{
+                        self.viewModel?.filteredProductsVM =  products
+                        self.childTableViewController.tableView.reloadData()
+                    }
                 }
             case .error(let error):
                 print(error)

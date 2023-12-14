@@ -17,13 +17,13 @@ enum DataError: Error {
 
 typealias ResultHandler<T> = (Result<T, DataError>) -> Void
 
-final class APIManager {
+class APIManager {
     
     static let shared          = APIManager()
     private var networkhandler = NetworkHandler()
     private var reponseHandler = ResponseHandler()
     
-   private init(networkhandler: NetworkHandler = NetworkHandler(), responseHandler: ResponseHandler = ResponseHandler()) {
+    init(networkhandler: NetworkHandler = NetworkHandler(), responseHandler: ResponseHandler = ResponseHandler()) {
         
         self.networkhandler = NetworkHandler()
         self.reponseHandler = ResponseHandler()

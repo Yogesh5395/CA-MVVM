@@ -25,6 +25,12 @@ final class ProductViewModel {
     
     var eventHandler: ((_ event:Event) -> Void)? // Data Binding Closure
     
+    private var product: ProductUseCase
+    init(product: ProductUseCase) {
+        self.product = product
+    }
+    
+    
     func fetchProducts() {
         self.eventHandler?(.loading)
         APIManager.shared.request(
@@ -40,6 +46,21 @@ final class ProductViewModel {
                     self.eventHandler?(.error(error))
                 }
             }
+    }
+    
+    func fetchProductList() {
+        self.eventHandler?(.loading)
+        self.product.fetch() { response in
+            self.eventHandler?(.stopLoading)
+            switch response {
+            case .success(let products):
+                self.products = products
+                self.productsVM = products.map{SingleProductViewModel(product: $0)}
+                self.eventHandler?(.dataLoad)
+            case .failure(let error):
+                self.eventHandler?(.error(error))
+            }
+        }
     }
 }
 

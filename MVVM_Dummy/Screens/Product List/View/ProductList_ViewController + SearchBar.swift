@@ -16,13 +16,18 @@ extension ProductList_ViewController {
         print("searchText: ",searchText)
         
         guard let searchText = searchController.searchBar.text, !searchText.isEmpty else {
-            viewModel.filteredProductsVM = self.viewModel.productsVM
-            self.childTableViewController.tableView.reloadData()
+            
+            if let productsVM = self.viewModel?.productsVM {
+                viewModel?.filteredProductsVM = productsVM
+                self.childTableViewController.tableView.reloadData()
+            }
             return
         }
         
-        viewModel.filteredProductsVM = viewModel.productsVM.filter { product in
-            return product.title.lowercased().contains(searchText.lowercased())
+        if let productsVM = self.viewModel?.productsVM {
+            viewModel?.filteredProductsVM = productsVM.filter { product in
+                return product.title.lowercased().contains(searchText.lowercased())
+            }
         }
         
         self.childTableViewController.tableView.reloadData()
