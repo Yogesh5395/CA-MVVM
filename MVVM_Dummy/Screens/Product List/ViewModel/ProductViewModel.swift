@@ -17,9 +17,6 @@ enum Event {
 
 final class ProductViewModel {
     
-    var products: [Product] = []
-    var filteredProducts: [Product] = []
-    
     let productDataManager = ProductDataManager()
     
     var productsVM:[SingleProductViewModel] = []
@@ -32,36 +29,13 @@ final class ProductViewModel {
         self.product = product
     }
     
-    
-    func fetchProducts() {
-        self.eventHandler?(.loading)
-        APIManager.shared.request(
-            modelType: [Product].self,
-            type: ProductEndPointType.products) { response in
-                self.eventHandler?(.stopLoading)
-                switch response {
-                case .success(let products):
-                    self.products = products
-                    self.productsVM = products.map{SingleProductViewModel(product: $0)}
-                    self.eventHandler?(.dataLoad)
-                case .failure(let error):
-                    self.eventHandler?(.error(error))
-                }
-            }
-    }
-    
     func fetchProductList() {
         self.eventHandler?(.loading)
         self.product.fetch() { response in
             self.eventHandler?(.stopLoading)
             switch response {
             case .success(let products):
-                self.products = products
                 self.productsVM = products.map{SingleProductViewModel(product: $0)}
-                
-                for record in self.productsVM {
-                    self.productDataManager.inserData(record: record)
-                }
                 self.eventHandler?(.dataLoad)
             case .failure(let error):
                 self.eventHandler?(.error(error))

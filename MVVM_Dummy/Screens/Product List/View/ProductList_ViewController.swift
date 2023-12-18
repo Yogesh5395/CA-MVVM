@@ -28,24 +28,19 @@ class ProductList_ViewController: ChildViewController {
     func configuration(){
         
         let serviceImplementation = ProductServiceImpl()
-        let repo = ProductRepository(ProductServiceImplementation: serviceImplementation)
+        let productDataManager    = ProductDataManager()
+        
+        let repo = ProductRepository(productServiceImplementation: serviceImplementation, productDataManager: productDataManager)
+        
         let useCase = ProductUseCase(repository: repo)
-        viewModel = ProductViewModel(product: useCase)
+        viewModel   = ProductViewModel(product: useCase)
         
         if let products = self.viewModel?.productDataManager.fetchProducts() {
             self.viewModel?.productsVM = products.map{SingleProductViewModel(product: $0)}
         }
         
-        if let products = viewModel?.productsVM, products.count > 0 {
-            self.viewModel?.filteredProductsVM =  products
-            self.childTableViewController.tableView.reloadData()
-        }else {
-            viewModel?.fetchProductList()
-            
-    //        viewModel.fetchProducts()
-            
-            obsereEvent()
-        }
+        obsereEvent()
+        viewModel?.fetchProductList()
     }
     
     // Data binding event observe karega - communication
