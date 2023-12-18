@@ -41,6 +41,30 @@
 		ECF0CCD82B235FC500749C03 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF0CCD72B235FC500749C03 /* APIManager.swift */; };
 		ECF0CCDA2B236D6E00749C03 /* ProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF0CCD92B236D6E00749C03 /* ProductViewModel.swift */; };
 		ECF0EAA02B2B20E800F4338D /* ProductServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF0EA9F2B2B20E800F4338D /* ProductServiceImpl.swift */; };
+		ECF0EAA52B2C3ACC00F4338D /* PersistentStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF0EAA42B2C3ACC00F4338D /* PersistentStorage.swift */; };
+		ECF0EAA62B2C3ACC00F4338D /* PersistentStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF0EAA42B2C3ACC00F4338D /* PersistentStorage.swift */; };
+		ECF0EAA72B2C3ACC00F4338D /* PersistentStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF0EAA42B2C3ACC00F4338D /* PersistentStorage.swift */; };
+		ECF0EB2C2B300BCA00F4338D /* ProductDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF0EB2B2B300BCA00F4338D /* ProductDataManager.swift */; };
+		ECF0EB2D2B300BCA00F4338D /* ProductDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF0EB2B2B300BCA00F4338D /* ProductDataManager.swift */; };
+		ECF0EB2E2B300BCA00F4338D /* ProductDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF0EB2B2B300BCA00F4338D /* ProductDataManager.swift */; };
+		ECF0EB302B300BEF00F4338D /* RateDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF0EB2F2B300BEF00F4338D /* RateDataManager.swift */; };
+		ECF0EB312B300BEF00F4338D /* RateDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF0EB2F2B300BEF00F4338D /* RateDataManager.swift */; };
+		ECF0EB322B300BEF00F4338D /* RateDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF0EB2F2B300BEF00F4338D /* RateDataManager.swift */; };
+		ECF0EB352B3028FC00F4338D /* CoreData_ProductExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF0EB342B3028FC00F4338D /* CoreData_ProductExtension.swift */; };
+		ECF0EB362B3028FC00F4338D /* CoreData_ProductExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF0EB342B3028FC00F4338D /* CoreData_ProductExtension.swift */; };
+		ECF0EB372B3028FC00F4338D /* CoreData_ProductExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF0EB342B3028FC00F4338D /* CoreData_ProductExtension.swift */; };
+		ECF0EB3C2B30409100F4338D /* CDRate+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF0EB382B30409100F4338D /* CDRate+CoreDataClass.swift */; };
+		ECF0EB3D2B30409100F4338D /* CDRate+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF0EB382B30409100F4338D /* CDRate+CoreDataClass.swift */; };
+		ECF0EB3E2B30409100F4338D /* CDRate+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF0EB382B30409100F4338D /* CDRate+CoreDataClass.swift */; };
+		ECF0EB3F2B30409100F4338D /* CDRate+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF0EB392B30409100F4338D /* CDRate+CoreDataProperties.swift */; };
+		ECF0EB402B30409100F4338D /* CDRate+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF0EB392B30409100F4338D /* CDRate+CoreDataProperties.swift */; };
+		ECF0EB412B30409100F4338D /* CDRate+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF0EB392B30409100F4338D /* CDRate+CoreDataProperties.swift */; };
+		ECF0EB422B30409100F4338D /* CDProduct+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF0EB3A2B30409100F4338D /* CDProduct+CoreDataClass.swift */; };
+		ECF0EB432B30409100F4338D /* CDProduct+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF0EB3A2B30409100F4338D /* CDProduct+CoreDataClass.swift */; };
+		ECF0EB442B30409100F4338D /* CDProduct+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF0EB3A2B30409100F4338D /* CDProduct+CoreDataClass.swift */; };
+		ECF0EB452B30409100F4338D /* CDProduct+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF0EB3B2B30409100F4338D /* CDProduct+CoreDataProperties.swift */; };
+		ECF0EB462B30409100F4338D /* CDProduct+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF0EB3B2B30409100F4338D /* CDProduct+CoreDataProperties.swift */; };
+		ECF0EB472B30409100F4338D /* CDProduct+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF0EB3B2B30409100F4338D /* CDProduct+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +123,14 @@
 		ECF0CCD72B235FC500749C03 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		ECF0CCD92B236D6E00749C03 /* ProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewModel.swift; sourceTree = "<group>"; };
 		ECF0EA9F2B2B20E800F4338D /* ProductServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductServiceImpl.swift; sourceTree = "<group>"; };
+		ECF0EAA42B2C3ACC00F4338D /* PersistentStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentStorage.swift; sourceTree = "<group>"; };
+		ECF0EB2B2B300BCA00F4338D /* ProductDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDataManager.swift; sourceTree = "<group>"; };
+		ECF0EB2F2B300BEF00F4338D /* RateDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateDataManager.swift; sourceTree = "<group>"; };
+		ECF0EB342B3028FC00F4338D /* CoreData_ProductExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreData_ProductExtension.swift; sourceTree = "<group>"; };
+		ECF0EB382B30409100F4338D /* CDRate+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDRate+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		ECF0EB392B30409100F4338D /* CDRate+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDRate+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		ECF0EB3A2B30409100F4338D /* CDProduct+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDProduct+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		ECF0EB3B2B30409100F4338D /* CDProduct+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDProduct+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +167,9 @@
 				ECAB38B82B298DFB0058833B /* UseCases */,
 				ECAB38B72B298DE80058833B /* Repository */,
 				ECF0EA9E2B2B20D000F4338D /* Service */,
+				ECF0EB2A2B300B9B00F4338D /* CoreDate_Datamanager */,
+				ECF0EB332B3028DD00F4338D /* Extension */,
+				ECF0EAA82B2C439C00F4338D /* CoreData_SupportFiles */,
 			);
 			path = "Product List";
 			sourceTree = "<group>";
@@ -229,6 +264,7 @@
 				ECBD5BBE2B2075DF00AB2C48 /* Storyboards */,
 				ECBD5BBA2B2075AA00AB2C48 /* Extensions */,
 				ECBD5BBD2B2075CC00AB2C48 /* Screens */,
+				ECF0EAA12B2C3A7600F4338D /* CoreData */,
 				ECBD5BBF2B2075F400AB2C48 /* Resources */,
 				ECBD5B962B2074C000AB2C48 /* Info.plist */,
 				ECBD5B8E2B2074BF00AB2C48 /* MVVM_Dummy.xcdatamodeld */,
@@ -378,6 +414,42 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
+		ECF0EAA12B2C3A7600F4338D /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				ECF0EAA42B2C3ACC00F4338D /* PersistentStorage.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		ECF0EAA82B2C439C00F4338D /* CoreData_SupportFiles */ = {
+			isa = PBXGroup;
+			children = (
+				ECF0EB382B30409100F4338D /* CDRate+CoreDataClass.swift */,
+				ECF0EB392B30409100F4338D /* CDRate+CoreDataProperties.swift */,
+				ECF0EB3A2B30409100F4338D /* CDProduct+CoreDataClass.swift */,
+				ECF0EB3B2B30409100F4338D /* CDProduct+CoreDataProperties.swift */,
+			);
+			path = CoreData_SupportFiles;
+			sourceTree = "<group>";
+		};
+		ECF0EB2A2B300B9B00F4338D /* CoreDate_Datamanager */ = {
+			isa = PBXGroup;
+			children = (
+				ECF0EB2B2B300BCA00F4338D /* ProductDataManager.swift */,
+				ECF0EB2F2B300BEF00F4338D /* RateDataManager.swift */,
+			);
+			path = CoreDate_Datamanager;
+			sourceTree = "<group>";
+		};
+		ECF0EB332B3028DD00F4338D /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				ECF0EB342B3028FC00F4338D /* CoreData_ProductExtension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -510,16 +582,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECF0EB302B300BEF00F4338D /* RateDataManager.swift in Sources */,
 				ECBD5BCC2B20AC4000AB2C48 /* ChildViewController.swift in Sources */,
 				ECF0CCD82B235FC500749C03 /* APIManager.swift in Sources */,
 				ECBD5BCE2B20AC4F00AB2C48 /* SettingsViewController.swift in Sources */,
+				ECF0EB422B30409100F4338D /* CDProduct+CoreDataClass.swift in Sources */,
 				ECBD5BD22B21A51700AB2C48 /* BaseViewController.swift in Sources */,
+				ECF0EB452B30409100F4338D /* CDProduct+CoreDataProperties.swift in Sources */,
 				ECBD5BCA2B209FCA00AB2C48 /* MainViewController.swift in Sources */,
+				ECF0EB2C2B300BCA00F4338D /* ProductDataManager.swift in Sources */,
 				ECF0CCD62B235B7300749C03 /* ProductEndPointType.swift in Sources */,
 				ECBD5BD42B21ABA600AB2C48 /* BaseTableViewController.swift in Sources */,
 				EC470C5D2B259C8C003C3063 /* ProductList_ViewController + tableView.swift in Sources */,
 				ECBD5B902B2074BF00AB2C48 /* MVVM_Dummy.xcdatamodeld in Sources */,
 				EC27AD8F2B23032700A4ED1F /* ImageName.swift in Sources */,
+				ECF0EB3C2B30409100F4338D /* CDRate+CoreDataClass.swift in Sources */,
 				EC27AD8D2B23027C00A4ED1F /* Storybord.swift in Sources */,
 				ECAB38BC2B2996E30058833B /* ProductRepository.swift in Sources */,
 				ECAB38B52B2989540058833B /* SingleProductViewModel.swift in Sources */,
@@ -528,13 +605,16 @@
 				ECF02B682B25D16100C72F9F /* ProductList_ViewController + SearchBar.swift in Sources */,
 				ECA04AFB2B25B43200F6B117 /* ProductCell.swift in Sources */,
 				EC27AD912B23166400A4ED1F /* Product.swift in Sources */,
+				ECF0EB352B3028FC00F4338D /* CoreData_ProductExtension.swift in Sources */,
 				ECBD5BC82B20898700AB2C48 /* Constant.swift in Sources */,
 				ECAB38BA2B298E4D0058833B /* ProductService.swift in Sources */,
+				ECF0EAA52B2C3ACC00F4338D /* PersistentStorage.swift in Sources */,
 				ECF0EAA02B2B20E800F4338D /* ProductServiceImpl.swift in Sources */,
 				ECF0CCDA2B236D6E00749C03 /* ProductViewModel.swift in Sources */,
 				ECBD5B862B2074BF00AB2C48 /* AppDelegate.swift in Sources */,
 				ECF0CCD42B23591D00749C03 /* EndPointType.swift in Sources */,
 				EC27AD892B22F8B700A4ED1F /* ProductList_ViewController.swift in Sources */,
+				ECF0EB3F2B30409100F4338D /* CDRate+CoreDataProperties.swift in Sources */,
 				ECBD5BD02B2194FB00AB2C48 /* TabBarViewController.swift in Sources */,
 				ECBD5B882B2074BF00AB2C48 /* SceneDelegate.swift in Sources */,
 			);
@@ -544,7 +624,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECF0EB312B300BEF00F4338D /* RateDataManager.swift in Sources */,
+				ECF0EB362B3028FC00F4338D /* CoreData_ProductExtension.swift in Sources */,
+				ECF0EB3D2B30409100F4338D /* CDRate+CoreDataClass.swift in Sources */,
+				ECF0EB402B30409100F4338D /* CDRate+CoreDataProperties.swift in Sources */,
+				ECF0EB432B30409100F4338D /* CDProduct+CoreDataClass.swift in Sources */,
+				ECF0EB2D2B300BCA00F4338D /* ProductDataManager.swift in Sources */,
+				ECF0EAA62B2C3ACC00F4338D /* PersistentStorage.swift in Sources */,
 				ECBD5BA02B2074C000AB2C48 /* MVVM_DummyTests.swift in Sources */,
+				ECF0EB462B30409100F4338D /* CDProduct+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -552,6 +640,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECF0EB412B30409100F4338D /* CDRate+CoreDataProperties.swift in Sources */,
+				ECF0EB2E2B300BCA00F4338D /* ProductDataManager.swift in Sources */,
+				ECF0EB3E2B30409100F4338D /* CDRate+CoreDataClass.swift in Sources */,
+				ECF0EB372B3028FC00F4338D /* CoreData_ProductExtension.swift in Sources */,
+				ECF0EB322B300BEF00F4338D /* RateDataManager.swift in Sources */,
+				ECF0EB442B30409100F4338D /* CDProduct+CoreDataClass.swift in Sources */,
+				ECF0EB472B30409100F4338D /* CDProduct+CoreDataProperties.swift in Sources */,
+				ECF0EAA72B2C3ACC00F4338D /* PersistentStorage.swift in Sources */,
 				ECBD5BAA2B2074C000AB2C48 /* MVVM_DummyUITests.swift in Sources */,
 				ECBD5BAC2B2074C000AB2C48 /* MVVM_DummyUITestsLaunchTests.swift in Sources */,
 			);

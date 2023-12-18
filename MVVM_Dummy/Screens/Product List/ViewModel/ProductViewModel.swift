@@ -20,6 +20,8 @@ final class ProductViewModel {
     var products: [Product] = []
     var filteredProducts: [Product] = []
     
+    let productDataManager = ProductDataManager()
+    
     var productsVM:[SingleProductViewModel] = []
     var filteredProductsVM: [SingleProductViewModel] = []
     
@@ -56,6 +58,10 @@ final class ProductViewModel {
             case .success(let products):
                 self.products = products
                 self.productsVM = products.map{SingleProductViewModel(product: $0)}
+                
+                for record in self.productsVM {
+                    self.productDataManager.inserData(record: record)
+                }
                 self.eventHandler?(.dataLoad)
             case .failure(let error):
                 self.eventHandler?(.error(error))

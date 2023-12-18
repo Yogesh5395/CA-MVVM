@@ -16,6 +16,10 @@ class ProductList_ViewController: ChildViewController {
 
         // Do any additional setup after loading the view.
         
+        let documentDirectoryPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        debugPrint(documentDirectoryPath[0])
+
+        
         childTableViewController.tableView.register(UINib(nibName: CellId_and_Nib_ProductList_ViewController.ProductCell, bundle: nil), forCellReuseIdentifier: CellId_and_Nib_ProductList_ViewController.ProductCell)
         
         configuration()
@@ -27,11 +31,21 @@ class ProductList_ViewController: ChildViewController {
         let repo = ProductRepository(ProductServiceImplementation: serviceImplementation)
         let useCase = ProductUseCase(repository: repo)
         viewModel = ProductViewModel(product: useCase)
-        viewModel?.fetchProductList()
         
-//        viewModel.fetchProducts()
+        if let products = self.viewModel?.productDataManager.fetchProducts() {
+            self.viewModel?.productsVM = products.map{SingleProductViewModel(product: $0)}
+        }
         
-        obsereEvent()
+        if let products = viewModel?.productsVM, products.count > 0 {
+            self.viewModel?.filteredProductsVM =  products
+            self.childTableViewController.tableView.reloadData()
+        }else {
+            viewModel?.fetchProductList()
+            
+    //        viewModel.fetchProducts()
+            
+            obsereEvent()
+        }
     }
     
     // Data binding event observe karega - communication
