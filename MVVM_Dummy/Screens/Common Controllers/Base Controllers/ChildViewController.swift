@@ -146,6 +146,7 @@ class ChildViewController: UIViewController {
     
     @objc func addBarButtonTapped() {
         // Handle icon action
+        print("clicked...")
     }
     
 }
