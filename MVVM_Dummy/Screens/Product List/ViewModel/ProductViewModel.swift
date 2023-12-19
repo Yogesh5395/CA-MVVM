@@ -7,15 +7,7 @@
 
 import Foundation
 
-enum Event {
-    
-    case loading
-    case stopLoading
-    case dataLoad
-    case error(Error?)
-}
-
-final class ProductViewModel {
+class ProductViewModel {
     
     var productsVM:[SingleProductViewModel] = []
     var filteredProductsVM: [SingleProductViewModel] = []

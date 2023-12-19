@@ -29,7 +29,7 @@ class APIManager {
         self.reponseHandler = ResponseHandler()
     }
     
-    func request<T: Codable>(modelType: T.Type, type: EndPoints, completion: @escaping ResultHandler<T>) {
+    func requestItems<T: Codable>(modelType: T.Type, type: EndPoints, completion: @escaping ResultHandler<T>) {
         
         guard let url = type.url else {
             return completion(.failure(.invalidUrl))

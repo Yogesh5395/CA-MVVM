@@ -16,6 +16,6 @@ class ProductServiceImpl: ProductService {
     }
     
     func fetch(completion: @escaping(Result<[Product], DataError>) -> Void) {
-        self.apiManager.request(modelType: [Product].self, type: ProductEndPointType.products, completion: completion)
+        self.apiManager.requestItems(modelType: [Product].self, type: ProductEndPointType.products, completion: completion)
     }
 }

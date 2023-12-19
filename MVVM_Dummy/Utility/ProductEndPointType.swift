@@ -9,6 +9,7 @@ import Foundation
 
 enum ProductEndPointType {
     case products  // Module - GET
+    case addProduct(AddProduct) // - POST
 }
 
 extension ProductEndPointType: EndPoints {
@@ -17,6 +18,8 @@ extension ProductEndPointType: EndPoints {
         switch self {
         case .products:
             return "products"
+        case .addProduct(_):
+            return "products/add"
         }
     }
     
@@ -24,6 +27,8 @@ extension ProductEndPointType: EndPoints {
         switch self {
         case .products:
             return "https://fakestoreapi.com/"
+        case .addProduct(_):
+            return "https://dummyjson.com/"
         }
     }
     
@@ -35,6 +40,8 @@ extension ProductEndPointType: EndPoints {
         switch self {
         case .products:
             return nil
+        case .addProduct(let product):
+            return product
         }
     }
     
@@ -46,6 +53,8 @@ extension ProductEndPointType: EndPoints {
         switch self {
         case .products:
             return .get
+        case .addProduct(_):
+            return .post
         }
     }
 }

@@ -77,6 +77,22 @@
 		ECF0EB5C2B319CDA00F4338D /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECF0EB5B2B319CDA00F4338D /* TabBar.storyboard */; };
 		ECF0EB5D2B319CDA00F4338D /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECF0EB5B2B319CDA00F4338D /* TabBar.storyboard */; };
 		ECF0EB5E2B319CDA00F4338D /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECF0EB5B2B319CDA00F4338D /* TabBar.storyboard */; };
+		ECF0EB602B31A88800F4338D /* AddProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF0EB5F2B31A88800F4338D /* AddProduct.swift */; };
+		ECF0EB692B31ADCA00F4338D /* AddProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF0EB682B31ADCA00F4338D /* AddProductViewModel.swift */; };
+		ECF0EB6A2B31ADCA00F4338D /* AddProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF0EB682B31ADCA00F4338D /* AddProductViewModel.swift */; };
+		ECF0EB6B2B31ADCA00F4338D /* AddProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF0EB682B31ADCA00F4338D /* AddProductViewModel.swift */; };
+		ECF0EB6D2B31AE7100F4338D /* AddProductService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF0EB6C2B31AE7100F4338D /* AddProductService.swift */; };
+		ECF0EB6E2B31AE7100F4338D /* AddProductService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF0EB6C2B31AE7100F4338D /* AddProductService.swift */; };
+		ECF0EB6F2B31AE7100F4338D /* AddProductService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF0EB6C2B31AE7100F4338D /* AddProductService.swift */; };
+		ECF0EB712B31AE8900F4338D /* AddProductServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF0EB702B31AE8900F4338D /* AddProductServiceImpl.swift */; };
+		ECF0EB722B31AE8900F4338D /* AddProductServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF0EB702B31AE8900F4338D /* AddProductServiceImpl.swift */; };
+		ECF0EB732B31AE8900F4338D /* AddProductServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF0EB702B31AE8900F4338D /* AddProductServiceImpl.swift */; };
+		ECF0EB752B31B20F00F4338D /* AddProductRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF0EB742B31B20F00F4338D /* AddProductRepository.swift */; };
+		ECF0EB762B31B20F00F4338D /* AddProductRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF0EB742B31B20F00F4338D /* AddProductRepository.swift */; };
+		ECF0EB772B31B20F00F4338D /* AddProductRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF0EB742B31B20F00F4338D /* AddProductRepository.swift */; };
+		ECF0EB792B31B33B00F4338D /* AddProductUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF0EB782B31B33B00F4338D /* AddProductUseCases.swift */; };
+		ECF0EB7A2B31B33B00F4338D /* AddProductUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF0EB782B31B33B00F4338D /* AddProductUseCases.swift */; };
+		ECF0EB7B2B31B33B00F4338D /* AddProductUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF0EB782B31B33B00F4338D /* AddProductUseCases.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -147,6 +163,12 @@
 		ECF0EB532B317CA100F4338D /* AddProduct_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProduct_ViewController.swift; sourceTree = "<group>"; };
 		ECF0EB572B317D6E00F4338D /* ProductList_ViewController + Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProductList_ViewController + Navigation.swift"; sourceTree = "<group>"; };
 		ECF0EB5B2B319CDA00F4338D /* TabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
+		ECF0EB5F2B31A88800F4338D /* AddProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProduct.swift; sourceTree = "<group>"; };
+		ECF0EB682B31ADCA00F4338D /* AddProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductViewModel.swift; sourceTree = "<group>"; };
+		ECF0EB6C2B31AE7100F4338D /* AddProductService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductService.swift; sourceTree = "<group>"; };
+		ECF0EB702B31AE8900F4338D /* AddProductServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductServiceImpl.swift; sourceTree = "<group>"; };
+		ECF0EB742B31B20F00F4338D /* AddProductRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductRepository.swift; sourceTree = "<group>"; };
+		ECF0EB782B31B33B00F4338D /* AddProductUseCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductUseCases.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -352,10 +374,10 @@
 		ECBD5BBD2B2075CC00AB2C48 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				ECF0EB502B317BE100F4338D /* AddProduct */,
 				EC27AD872B22F85100A4ED1F /* Welcome Screen */,
 				EC27AD852B22F6F300A4ED1F /* Common Controllers */,
 				EC27AD842B22F69300A4ED1F /* Product List */,
+				ECF0EB502B317BE100F4338D /* AddProduct */,
 				EC27AD8A2B22F8D500A4ED1F /* Settings */,
 			);
 			path = Screens;
@@ -474,6 +496,11 @@
 			isa = PBXGroup;
 			children = (
 				ECF0EB522B317C3600F4338D /* View */,
+				ECF0EB632B31A95700F4338D /* Model */,
+				ECF0EB642B31ACD600F4338D /* ViewModel */,
+				ECF0EB652B31ACE000F4338D /* UseCases */,
+				ECF0EB662B31AD8D00F4338D /* Repository */,
+				ECF0EB672B31AD9500F4338D /* Service */,
 			);
 			path = AddProduct;
 			sourceTree = "<group>";
@@ -492,6 +519,47 @@
 				ECF0EB532B317CA100F4338D /* AddProduct_ViewController.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		ECF0EB632B31A95700F4338D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				ECF0EB5F2B31A88800F4338D /* AddProduct.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		ECF0EB642B31ACD600F4338D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				ECF0EB682B31ADCA00F4338D /* AddProductViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		ECF0EB652B31ACE000F4338D /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				ECF0EB782B31B33B00F4338D /* AddProductUseCases.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		ECF0EB662B31AD8D00F4338D /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				ECF0EB742B31B20F00F4338D /* AddProductRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		ECF0EB672B31AD9500F4338D /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				ECF0EB6C2B31AE7100F4338D /* AddProductService.swift */,
+				ECF0EB702B31AE8900F4338D /* AddProductServiceImpl.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -635,6 +703,7 @@
 				ECF0EB302B300BEF00F4338D /* RateDataManager.swift in Sources */,
 				ECBD5BCC2B20AC4000AB2C48 /* ChildViewController.swift in Sources */,
 				ECF0CCD82B235FC500749C03 /* APIManager.swift in Sources */,
+				ECF0EB792B31B33B00F4338D /* AddProductUseCases.swift in Sources */,
 				ECBD5BCE2B20AC4F00AB2C48 /* SettingsViewController.swift in Sources */,
 				ECF0EB422B30409100F4338D /* CDProduct+CoreDataClass.swift in Sources */,
 				ECBD5BD22B21A51700AB2C48 /* BaseViewController.swift in Sources */,
@@ -644,6 +713,7 @@
 				ECF0CCD62B235B7300749C03 /* ProductEndPointType.swift in Sources */,
 				ECBD5BD42B21ABA600AB2C48 /* BaseTableViewController.swift in Sources */,
 				EC470C5D2B259C8C003C3063 /* ProductList_ViewController + tableView.swift in Sources */,
+				ECF0EB712B31AE8900F4338D /* AddProductServiceImpl.swift in Sources */,
 				ECBD5B902B2074BF00AB2C48 /* MVVM_Dummy.xcdatamodeld in Sources */,
 				EC27AD8F2B23032700A4ED1F /* ImageName.swift in Sources */,
 				ECF0EB3C2B30409100F4338D /* CDRate+CoreDataClass.swift in Sources */,
@@ -659,14 +729,18 @@
 				ECF0EB352B3028FC00F4338D /* CoreData_ProductExtension.swift in Sources */,
 				ECBD5BC82B20898700AB2C48 /* Constant.swift in Sources */,
 				ECAB38BA2B298E4D0058833B /* ProductService.swift in Sources */,
+				ECF0EB692B31ADCA00F4338D /* AddProductViewModel.swift in Sources */,
 				ECF0EAA52B2C3ACC00F4338D /* PersistentStorage.swift in Sources */,
 				ECF0EB582B317D6E00F4338D /* ProductList_ViewController + Navigation.swift in Sources */,
 				ECF0EAA02B2B20E800F4338D /* ProductServiceImpl.swift in Sources */,
 				ECF0CCDA2B236D6E00749C03 /* ProductViewModel.swift in Sources */,
 				ECBD5B862B2074BF00AB2C48 /* AppDelegate.swift in Sources */,
 				ECF0CCD42B23591D00749C03 /* EndPointType.swift in Sources */,
+				ECF0EB602B31A88800F4338D /* AddProduct.swift in Sources */,
 				EC27AD892B22F8B700A4ED1F /* ProductList_ViewController.swift in Sources */,
 				ECF0EB3F2B30409100F4338D /* CDRate+CoreDataProperties.swift in Sources */,
+				ECF0EB6D2B31AE7100F4338D /* AddProductService.swift in Sources */,
+				ECF0EB752B31B20F00F4338D /* AddProductRepository.swift in Sources */,
 				ECBD5BD02B2194FB00AB2C48 /* TabBarViewController.swift in Sources */,
 				ECBD5B882B2074BF00AB2C48 /* SceneDelegate.swift in Sources */,
 			);
@@ -676,16 +750,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECF0EB722B31AE8900F4338D /* AddProductServiceImpl.swift in Sources */,
 				ECF0EB312B300BEF00F4338D /* RateDataManager.swift in Sources */,
 				ECF0EB362B3028FC00F4338D /* CoreData_ProductExtension.swift in Sources */,
+				ECF0EB762B31B20F00F4338D /* AddProductRepository.swift in Sources */,
 				ECF0EB552B317CA100F4338D /* AddProduct_ViewController.swift in Sources */,
 				ECF0EB3D2B30409100F4338D /* CDRate+CoreDataClass.swift in Sources */,
 				ECF0EB402B30409100F4338D /* CDRate+CoreDataProperties.swift in Sources */,
 				ECF0EB432B30409100F4338D /* CDProduct+CoreDataClass.swift in Sources */,
+				ECF0EB6A2B31ADCA00F4338D /* AddProductViewModel.swift in Sources */,
+				ECF0EB7A2B31B33B00F4338D /* AddProductUseCases.swift in Sources */,
 				ECF0EB2D2B300BCA00F4338D /* ProductDataManager.swift in Sources */,
 				ECF0EAA62B2C3ACC00F4338D /* PersistentStorage.swift in Sources */,
 				ECF0EB592B317D6E00F4338D /* ProductList_ViewController + Navigation.swift in Sources */,
 				ECBD5BA02B2074C000AB2C48 /* MVVM_DummyTests.swift in Sources */,
+				ECF0EB6E2B31AE7100F4338D /* AddProductService.swift in Sources */,
 				ECF0EB462B30409100F4338D /* CDProduct+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -695,7 +774,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				ECF0EB412B30409100F4338D /* CDRate+CoreDataProperties.swift in Sources */,
+				ECF0EB6B2B31ADCA00F4338D /* AddProductViewModel.swift in Sources */,
 				ECF0EB2E2B300BCA00F4338D /* ProductDataManager.swift in Sources */,
+				ECF0EB6F2B31AE7100F4338D /* AddProductService.swift in Sources */,
 				ECF0EB3E2B30409100F4338D /* CDRate+CoreDataClass.swift in Sources */,
 				ECF0EB372B3028FC00F4338D /* CoreData_ProductExtension.swift in Sources */,
 				ECF0EB322B300BEF00F4338D /* RateDataManager.swift in Sources */,
@@ -706,6 +787,9 @@
 				ECF0EAA72B2C3ACC00F4338D /* PersistentStorage.swift in Sources */,
 				ECBD5BAA2B2074C000AB2C48 /* MVVM_DummyUITests.swift in Sources */,
 				ECBD5BAC2B2074C000AB2C48 /* MVVM_DummyUITestsLaunchTests.swift in Sources */,
+				ECF0EB7B2B31B33B00F4338D /* AddProductUseCases.swift in Sources */,
+				ECF0EB732B31AE8900F4338D /* AddProductServiceImpl.swift in Sources */,
+				ECF0EB772B31B20F00F4338D /* AddProductRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

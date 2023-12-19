@@ -14,5 +14,12 @@ enum Constant {
     enum API {
         static let productURL = "https://fakestoreapi.com/products"
     }
-    
+}
+
+
+enum Event {
+    case loading
+    case stopLoading
+    case dataLoad
+    case error(Error?)
 }
