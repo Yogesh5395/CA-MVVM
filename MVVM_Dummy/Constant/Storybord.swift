@@ -9,7 +9,8 @@ import Foundation
 
 enum StoryboardName {
     static let main = "Main"
-    static let addProductSBN = "AddProduct_Storyboard"
+    static let tabBar = "TabBar"
+    static let product = "Product"
 }
 
 // StoryboardName_StoryBordID

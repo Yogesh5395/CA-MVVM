@@ -23,8 +23,27 @@
             </objects>
             <point key="canvasLocation" x="-150" y="89"/>
         </scene>
+        <!--Product List View Controller-->
+        <scene sceneID="W7p-jZ-5Zk">
+            <objects>
+                <viewController storyboardIdentifier="ProductList_ViewController" id="Fub-vx-zhd" customClass="ProductList_ViewController" customModule="MVVM_Dummy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gdh-h1-fdB">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="qRz-4H-FgY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="aV5-YB-WPe"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="516-Yn-rhA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1245" y="89"/>
+        </scene>
     </scenes>
     <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBlueColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

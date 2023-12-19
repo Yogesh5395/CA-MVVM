@@ -33,15 +33,22 @@ class MainViewController: UIViewController {
         }
         
         // Create a new instance of the desired new root view controller
-        let storyboard = UIStoryboard(name: StoryboardName.main, bundle: nil) // Replace "Main" with your storyboard name if different
-        guard let newRootVC = storyboard.instantiateViewController(withIdentifier: "TabBarViewController") as? TabBarViewController else {
+        let storyboard = UIStoryboard(name: StoryboardName.tabBar, bundle: nil) // Replace "Main" with your storyboard name if different
+        guard let tabBarController = storyboard.instantiateViewController(withIdentifier: Main_StoryBordID.TabBarViewController) as? TabBarViewController else {
             print("TabBarViewController could not be instantiated")
             return
         }
         
+        // programatically adding the tabbar items 
+//        let firstStoryboard = UIStoryboard(name: StoryboardName.product, bundle: nil)
+//        let firstViewController = firstStoryboard.instantiateViewController(withIdentifier: addProductSBN_SBI.addProduct_ViewController) as! AddProduct_ViewController
+//        firstViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 0)
+//
+//        tabBarController.viewControllers = [firstViewController]
+        
         // Set the new root view controller with or without animation
         UIView.transition(with: window, duration: 0.5, options: .transitionCrossDissolve, animations: {
-            window.rootViewController = newRootVC
+            window.rootViewController = tabBarController
         }, completion: nil)
     }
     

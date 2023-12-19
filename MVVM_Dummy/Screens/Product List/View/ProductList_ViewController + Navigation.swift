@@ -14,8 +14,7 @@ extension ProductList_ViewController {
         print("clicking...")
         
         // Create a new instance of the desired new root view controller
-        let storyboard = UIStoryboard(name: StoryboardName.addProductSBN, bundle: nil) // Replace "Main" with your storyboard name if different
-        
+        let storyboard = UIStoryboard(name: StoryboardName.product, bundle: nil) // Replace "Main" with your storyboard name if different
         
         let viewController = storyboard.instantiateViewController(withIdentifier: addProductSBN_SBI.addProduct_ViewController)
         

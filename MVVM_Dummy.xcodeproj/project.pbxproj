@@ -65,15 +65,18 @@
 		ECF0EB452B30409100F4338D /* CDProduct+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF0EB3B2B30409100F4338D /* CDProduct+CoreDataProperties.swift */; };
 		ECF0EB462B30409100F4338D /* CDProduct+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF0EB3B2B30409100F4338D /* CDProduct+CoreDataProperties.swift */; };
 		ECF0EB472B30409100F4338D /* CDProduct+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF0EB3B2B30409100F4338D /* CDProduct+CoreDataProperties.swift */; };
-		ECF0EB4D2B317BD300F4338D /* AddProduct_Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECF0EB4C2B317BD300F4338D /* AddProduct_Storyboard.storyboard */; };
-		ECF0EB4E2B317BD300F4338D /* AddProduct_Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECF0EB4C2B317BD300F4338D /* AddProduct_Storyboard.storyboard */; };
-		ECF0EB4F2B317BD300F4338D /* AddProduct_Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECF0EB4C2B317BD300F4338D /* AddProduct_Storyboard.storyboard */; };
+		ECF0EB4D2B317BD300F4338D /* Product.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECF0EB4C2B317BD300F4338D /* Product.storyboard */; };
+		ECF0EB4E2B317BD300F4338D /* Product.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECF0EB4C2B317BD300F4338D /* Product.storyboard */; };
+		ECF0EB4F2B317BD300F4338D /* Product.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECF0EB4C2B317BD300F4338D /* Product.storyboard */; };
 		ECF0EB542B317CA100F4338D /* AddProduct_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF0EB532B317CA100F4338D /* AddProduct_ViewController.swift */; };
 		ECF0EB552B317CA100F4338D /* AddProduct_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF0EB532B317CA100F4338D /* AddProduct_ViewController.swift */; };
 		ECF0EB562B317CA100F4338D /* AddProduct_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF0EB532B317CA100F4338D /* AddProduct_ViewController.swift */; };
 		ECF0EB582B317D6E00F4338D /* ProductList_ViewController + Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF0EB572B317D6E00F4338D /* ProductList_ViewController + Navigation.swift */; };
 		ECF0EB592B317D6E00F4338D /* ProductList_ViewController + Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF0EB572B317D6E00F4338D /* ProductList_ViewController + Navigation.swift */; };
 		ECF0EB5A2B317D6E00F4338D /* ProductList_ViewController + Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF0EB572B317D6E00F4338D /* ProductList_ViewController + Navigation.swift */; };
+		ECF0EB5C2B319CDA00F4338D /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECF0EB5B2B319CDA00F4338D /* TabBar.storyboard */; };
+		ECF0EB5D2B319CDA00F4338D /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECF0EB5B2B319CDA00F4338D /* TabBar.storyboard */; };
+		ECF0EB5E2B319CDA00F4338D /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECF0EB5B2B319CDA00F4338D /* TabBar.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -140,9 +143,10 @@
 		ECF0EB392B30409100F4338D /* CDRate+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDRate+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		ECF0EB3A2B30409100F4338D /* CDProduct+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDProduct+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		ECF0EB3B2B30409100F4338D /* CDProduct+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDProduct+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
-		ECF0EB4C2B317BD300F4338D /* AddProduct_Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddProduct_Storyboard.storyboard; sourceTree = "<group>"; };
+		ECF0EB4C2B317BD300F4338D /* Product.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Product.storyboard; sourceTree = "<group>"; };
 		ECF0EB532B317CA100F4338D /* AddProduct_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProduct_ViewController.swift; sourceTree = "<group>"; };
 		ECF0EB572B317D6E00F4338D /* ProductList_ViewController + Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProductList_ViewController + Navigation.swift"; sourceTree = "<group>"; };
+		ECF0EB5B2B319CDA00F4338D /* TabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -360,9 +364,10 @@
 		ECBD5BBE2B2075DF00AB2C48 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				ECF0EB512B317BFA00F4338D /* AddProduct StoryBoard */,
+				ECF0EB512B317BFA00F4338D /* Product */,
 				ECBD5B8B2B2074BF00AB2C48 /* Main.storyboard */,
 				ECBD5B932B2074C000AB2C48 /* LaunchScreen.storyboard */,
+				ECF0EB5B2B319CDA00F4338D /* TabBar.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -473,12 +478,12 @@
 			path = AddProduct;
 			sourceTree = "<group>";
 		};
-		ECF0EB512B317BFA00F4338D /* AddProduct StoryBoard */ = {
+		ECF0EB512B317BFA00F4338D /* Product */ = {
 			isa = PBXGroup;
 			children = (
-				ECF0EB4C2B317BD300F4338D /* AddProduct_Storyboard.storyboard */,
+				ECF0EB4C2B317BD300F4338D /* Product.storyboard */,
 			);
-			path = "AddProduct StoryBoard";
+			path = Product;
 			sourceTree = "<group>";
 		};
 		ECF0EB522B317C3600F4338D /* View */ = {
@@ -596,7 +601,8 @@
 				ECBD5B952B2074C000AB2C48 /* LaunchScreen.storyboard in Resources */,
 				ECA04AFC2B25B43200F6B117 /* ProductCell.xib in Resources */,
 				ECBD5B922B2074C000AB2C48 /* Assets.xcassets in Resources */,
-				ECF0EB4D2B317BD300F4338D /* AddProduct_Storyboard.storyboard in Resources */,
+				ECF0EB4D2B317BD300F4338D /* Product.storyboard in Resources */,
+				ECF0EB5C2B319CDA00F4338D /* TabBar.storyboard in Resources */,
 				ECBD5B8D2B2074BF00AB2C48 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -605,7 +611,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ECF0EB4E2B317BD300F4338D /* AddProduct_Storyboard.storyboard in Resources */,
+				ECF0EB5D2B319CDA00F4338D /* TabBar.storyboard in Resources */,
+				ECF0EB4E2B317BD300F4338D /* Product.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -613,7 +620,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ECF0EB4F2B317BD300F4338D /* AddProduct_Storyboard.storyboard in Resources */,
+				ECF0EB5E2B319CDA00F4338D /* TabBar.storyboard in Resources */,
+				ECF0EB4F2B317BD300F4338D /* Product.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
