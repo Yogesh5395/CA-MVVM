@@ -17,8 +17,6 @@ enum Event {
 
 final class ProductViewModel {
     
-    let productDataManager = ProductDataManager()
-    
     var productsVM:[SingleProductViewModel] = []
     var filteredProductsVM: [SingleProductViewModel] = []
     

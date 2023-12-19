@@ -10,28 +10,34 @@ import CoreData
 
 struct ProductDataManager {
     
+    let persistentStorageObj: PersistentStorage
+    
+    init(persistentStorageObj: PersistentStorage) {
+        self.persistentStorageObj = persistentStorageObj
+    }
+    
     func inserData(record: SingleProductViewModel) {
         
-        let cdProduct = CDProduct(context: PersistentStorage.shared.context)
+        let cdProduct = CDProduct(context: persistentStorageObj.context)
         
 //        cdProduct.id = record.id
-        cdProduct.image = record.image
-        cdProduct.title = record.title
-        cdProduct.price = record.price
-        cdProduct.category = record.category
+        cdProduct.image        = record.image
+        cdProduct.title        = record.title
+        cdProduct.price        = record.price
+        cdProduct.category     = record.category
         cdProduct.descriptio_n = record.description
         
         
-        let cdRate = CDRate(context: PersistentStorage.shared.context)
-        cdRate.rate = record.rating.rate
+        let cdRate   = CDRate(context: persistentStorageObj.context)
+        cdRate.rate  = record.rating.rate
         cdRate.count = Int32(record.rating.count)
         
-        PersistentStorage.shared.saveContext()
+        persistentStorageObj.saveContext()
     }
     
     func fetchProducts() -> [Product]? {
         
-        let records = PersistentStorage.shared.fetchManagedObject(managedObject: CDProduct.self)
+        let records = persistentStorageObj.fetchManagedObject(managedObject: CDProduct.self)
         
         guard records != nil && records?.count != 0 else {return nil}
         

@@ -27,17 +27,16 @@ class ProductList_ViewController: ChildViewController {
     
     func configuration(){
         
-        let serviceImplementation = ProductServiceImpl()
-        let productDataManager    = ProductDataManager()
+        let apiManager            = APIManager() // Common API class
+        let serviceImplementation = ProductServiceImpl(apiManager: apiManager)
         
-        let repo = ProductRepository(productServiceImplementation: serviceImplementation, productDataManager: productDataManager)
+        let persistentStorageObj  = PersistentStorage() // Common Core Data class
+        let productDataManager    = ProductDataManager(persistentStorageObj: persistentStorageObj)
         
-        let useCase = ProductUseCase(repository: repo)
-        viewModel   = ProductViewModel(product: useCase)
+        let productRepository = ProductRepository(productServiceImplementation: serviceImplementation, productDataManager: productDataManager)
         
-        if let products = self.viewModel?.productDataManager.fetchProducts() {
-            self.viewModel?.productsVM = products.map{SingleProductViewModel(product: $0)}
-        }
+        let productUseCase = ProductUseCase(repository: productRepository)
+        viewModel          = ProductViewModel(product: productUseCase)
         
         obsereEvent()
         viewModel?.fetchProductList()
@@ -62,7 +61,7 @@ class ProductList_ViewController: ChildViewController {
                     }
                 }
             case .error(let error):
-                print(error)
+                print(error!)
             }
             
         }

@@ -10,8 +10,14 @@ import CoreData
 
 struct RateDataManager {
     
+    let persistentStorageObj: PersistentStorage
+    
+    init(persistentStorageObj: PersistentStorage) {
+        self.persistentStorageObj = persistentStorageObj
+    }
+    
     func inserData(record: Rate) {
-        let CDRate = CDRate(context: PersistentStorage.shared.context)
+        let CDRate = CDRate(context: persistentStorageObj.context)
         CDRate.count = Int32(record.count)
         CDRate.rate = record.rate
     }
