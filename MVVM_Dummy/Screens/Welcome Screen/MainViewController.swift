@@ -47,9 +47,22 @@ class MainViewController: UIViewController {
 //        tabBarController.viewControllers = [firstViewController]
         
         // Set the new root view controller with or without animation
-        UIView.transition(with: window, duration: 0.5, options: .transitionCrossDissolve, animations: {
-            window.rootViewController = tabBarController
-        }, completion: nil)
+//        UIView.transition(with: window, duration: 0.5, options: .transitionCrossDissolve, animations: {
+//            window.rootViewController = tabBarController
+//        }, completion: nil)
+        
+//        let navigationController = UINavigationController(rootViewController: tabBarController)
+//        navigationController.pushViewController(tabBarController, animated: true)
+
+//        self.navigationController?.pushViewController(navigationController, animated: true)
+        
+//        self.navigationController?.pushViewController(tabBarController, animated: true)
+        
+        let navigationController = UINavigationController(rootViewController: tabBarController)
+
+        // Assuming you have access to the window from AppDelegate or SceneDelegate
+        window.rootViewController = navigationController
+        window.makeKeyAndVisible()
     }
     
 }

@@ -9,7 +9,7 @@ import Foundation
 
 class ProductUseCase {
     
-    private var repository: ProductRepository
+    var repository: ProductRepository
     
     init(repository: ProductRepository) {
         self.repository = repository

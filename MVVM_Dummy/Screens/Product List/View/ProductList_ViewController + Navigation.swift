@@ -13,18 +13,23 @@ extension ProductList_ViewController {
     override func rightBarButtonTapped() {
         print("clicking...")
         
+        //        self.addProduct?.addProductDelegate = self
+        
         // Create a new instance of the desired new root view controller
         let storyboard = UIStoryboard(name: StoryboardName.product, bundle: nil) // Replace "Main" with your storyboard name if different
         
-        let viewController = storyboard.instantiateViewController(withIdentifier: addProductSBN_SBI.addProduct_ViewController)
-        
-        if let navigationController = self.navigationController {
-            // Push the view controller onto the navigation stack
-            navigationController.pushViewController(viewController, animated: true)
-        } else {
-            print("NavigationController not found. This view controller is not part of a navigation stack.")
+        if let viewController = storyboard.instantiateViewController(withIdentifier: addProductSBN_SBI.addProduct_ViewController) as? AddProduct_ViewController {
+            
+            viewController.addProductDelegate = self
+            
+            if let navigationController = self.navigationController {
+                // Push the view controller onto the navigation stack
+                navigationController.pushViewController(viewController, animated: true)
+            } else {
+                print("NavigationController not found. This view controller is not part of a navigation stack.")
+            }
         }
-
+        
     }
     
 }

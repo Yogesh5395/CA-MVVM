@@ -18,11 +18,17 @@ class ProductList_ViewController: ChildViewController {
         
         let documentDirectoryPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         debugPrint(documentDirectoryPath[0])
-
         
         childTableViewController.tableView.register(UINib(nibName: CellId_and_Nib_ProductList_ViewController.ProductCell, bundle: nil), forCellReuseIdentifier: CellId_and_Nib_ProductList_ViewController.ProductCell)
         
         configuration()
+        
+//        self.addProduct?.productListClosure = self
+//        self.addProduct?.addProductDelegate = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+
     }
     
     func configuration(){
@@ -36,7 +42,7 @@ class ProductList_ViewController: ChildViewController {
         let productRepository = ProductRepository(productServiceImplementation: serviceImplementation, productDataManager: productDataManager)
         
         let productUseCase = ProductUseCase(repository: productRepository)
-        viewModel          = ProductViewModel(product: productUseCase)
+        viewModel          = ProductViewModel(productUseCase: productUseCase)
         
         obsereEvent()
         viewModel?.fetchProductList()
@@ -64,6 +70,32 @@ class ProductList_ViewController: ChildViewController {
                 print(error!)
             }
             
+        }
+    }
+    
+    override func segmentChanged(_ sender: UISegmentedControl) {
+        // Handle the segment change
+        switch sender.selectedSegmentIndex {
+        case 0:
+            print("All selected .....////")
+            // Implement your code for the "All" segment
+        case 1:
+            print("Voicemail selected .....////")
+            // Implement your code for the "Voicemail" segment
+        default:
+            break
+        }
+    }
+}
+
+extension ProductList_ViewController: addProduct {
+    func productUploaded() {
+        DispatchQueue.main.async {
+            self.viewModel?.fetchProductList()
+            if let products = self.viewModel?.productsVM{
+                self.viewModel?.filteredProductsVM =  products
+            }
+            self.childTableViewController.tableView.reloadData()
         }
     }
 }

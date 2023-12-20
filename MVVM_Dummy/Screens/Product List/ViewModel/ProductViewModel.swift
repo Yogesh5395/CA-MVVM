@@ -14,14 +14,14 @@ class ProductViewModel {
     
     var eventHandler: ((_ event:Event) -> Void)? // Data Binding Closure
     
-    private var product: ProductUseCase
-    init(product: ProductUseCase) {
-        self.product = product
+    var productUseCase: ProductUseCase
+    init(productUseCase: ProductUseCase) {
+        self.productUseCase = productUseCase
     }
     
     func fetchProductList() {
         self.eventHandler?(.loading)
-        self.product.fetch() { response in
+        self.productUseCase.fetch() { response in
             self.eventHandler?(.stopLoading)
             switch response {
             case .success(let products):

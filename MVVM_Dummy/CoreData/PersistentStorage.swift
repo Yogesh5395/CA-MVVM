@@ -61,8 +61,13 @@ class PersistentStorage {
     
     func fetchManagedObject<T: NSManagedObject>(managedObject: T.Type) -> [T]? {
         
+        let entityName = String(describing: T.self)
+        
+        let request = NSFetchRequest<T>(entityName: entityName)
+        request.sortDescriptors = [NSSortDescriptor(key: "id", ascending: false)]
+            
         do {
-            guard let result = try context.fetch(managedObject.fetchRequest()) as? [T] else {return nil}
+            guard let result = try context.fetch(request) as? [T] else {return nil}
             
             return result
             

@@ -7,9 +7,14 @@
 
 import UIKit
 
+protocol addProduct {
+    func productUploaded()
+}
+
 class AddProduct_ViewController: UISearchController {
     
     var viewModel: AddProductViewModel?
+    var addProductDelegate: addProduct?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,7 +24,7 @@ class AddProduct_ViewController: UISearchController {
     }
     
     func configuration() {
-        let parameter = AddProduct(title: "My School")
+        let parameter = AddProduct(title: "Hare Krishna :)")
         
         
         let apiManager            = APIManager() // Common API class
@@ -52,8 +57,11 @@ class AddProduct_ViewController: UISearchController {
                 print("product loading ...")
             case .stopLoading:
                 print("loading completed ...")
-            case .dataLoad: break
-            
+            case .dataLoad:
+                addProductDelegate?.productUploaded()
+                DispatchQueue.main.async {
+                    self.navigationController?.popViewController(animated: true)
+                }
             case .error(let error):
                 print(error!)
             case .none:
