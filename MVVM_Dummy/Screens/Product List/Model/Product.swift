@@ -15,6 +15,7 @@ struct Product: Codable {
     let price: Double
     let rating: Rate
     let description: String
+    var favourite: Bool? = false
 }
 
 struct Rate: Codable {

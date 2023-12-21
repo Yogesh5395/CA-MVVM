@@ -3,6 +3,7 @@
     <entity name="CDProduct" representedClassName="CDProduct" syncable="YES">
         <attribute name="category" optional="YES" attributeType="String"/>
         <attribute name="descriptio_n" optional="YES" attributeType="String"/>
+        <attribute name="favourite" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="image" optional="YES" attributeType="String"/>
         <attribute name="price" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>

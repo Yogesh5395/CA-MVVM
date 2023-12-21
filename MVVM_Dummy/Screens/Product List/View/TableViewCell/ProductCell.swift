@@ -17,7 +17,7 @@ class ProductCell: UITableViewCell {
     @IBOutlet weak var productRating: UIButton!
     @IBOutlet weak var productDescription: UILabel!
     @IBOutlet weak var productPrice: UILabel!
-    @IBOutlet weak var buyButton: UIButton!
+    @IBOutlet weak var favouriteBtn: UIButton!
     
     var productVM: SingleProductViewModel? {
         didSet {
@@ -49,6 +49,17 @@ class ProductCell: UITableViewCell {
         productDescription.text = product.description
         productPrice.text = "$\(product.price)"
         productRating.setTitle("\(product.rating.rate)", for: .normal)
+        
+        if product.favourite {
+            if let image = UIImage(systemName: "heart.fill")?.withTintColor(.red, renderingMode: .alwaysOriginal) {
+                favouriteBtn.setImage(image, for: .normal)
+            }
+        }else{
+            if let image = UIImage(systemName: "heart.fill")?.withTintColor(.gray, renderingMode: .alwaysOriginal) {
+                favouriteBtn.setImage(image, for: .normal)
+            }
+        }
+        
 //        productImageView.setImage(with: product.image)
     }
     

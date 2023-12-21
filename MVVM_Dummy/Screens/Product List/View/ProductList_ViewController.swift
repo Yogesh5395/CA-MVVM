@@ -114,6 +114,25 @@ class ProductList_ViewController: ChildViewController {
     }
     
     @IBAction func favBtnTapped(_ sender: Any) {
+        
+        
+    }
+    
+    @objc func cellFavBtnTapped(sender: UIButton) {
+    
+        if let product = self.viewModel?.productsVM[sender.tag] {
+            product.favourite = !product.favourite
+            
+            if product.favourite {
+                if let image = UIImage(systemName: "heart.fill")?.withTintColor(.red, renderingMode: .alwaysOriginal) {
+                    sender.setImage(image, for: .normal)
+                }
+            }else{
+                if let image = UIImage(systemName: "heart.fill")?.withTintColor(.gray, renderingMode: .alwaysOriginal) {
+                    sender.setImage(image, for: .normal)
+                }
+            }
+        }
     }
     
     @IBAction func deletebtnTapped(_ sender: Any) {

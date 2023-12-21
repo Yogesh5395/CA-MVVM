@@ -13,6 +13,15 @@ class SingleProductViewModel {
 //        return product.id
 //    }
     
+    var favourite: Bool {
+        get {
+            return product.favourite ?? false
+        }
+        set(newFavouriteValue) {
+            product.favourite = newFavouriteValue
+        }
+    }
+    
     var title: String {
         return product.title
     }

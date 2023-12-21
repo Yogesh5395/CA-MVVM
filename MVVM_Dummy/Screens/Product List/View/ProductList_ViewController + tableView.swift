@@ -25,6 +25,8 @@ extension ProductList_ViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CellId_and_Nib_ProductList_ViewController.ProductCell, for: indexPath) as! ProductCell
         
+        cell.favouriteBtn.tag = indexPath.row
+        cell.favouriteBtn.addTarget(self, action: #selector(cellFavBtnTapped(sender:)), for: .touchUpInside)
         cell.productVM = viewModel?.filteredProductsVM[indexPath.row]
         return cell
     }
