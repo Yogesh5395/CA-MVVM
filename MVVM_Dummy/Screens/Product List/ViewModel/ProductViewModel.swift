@@ -37,5 +37,8 @@ class ProductViewModel {
         self.productUseCase.updateProductFavouriteStatus(forID: id, toNewStatus: newStatus)
     }
     
+    func deleteProduct(forID id: Int16) -> Bool {
+        self.productUseCase.deleteProduct(forID: id)
+    }
 }
 

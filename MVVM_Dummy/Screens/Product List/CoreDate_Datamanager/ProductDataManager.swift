@@ -64,14 +64,35 @@ struct ProductDataManager {
         fetchRequest.predicate = NSPredicate(format: "id == %d", id)
 
         do {
-            let results = try persistentStorageObj.context.fetch(fetchRequest)
-            if let objectToUpdate = results.first {
+            let result = try persistentStorageObj.context.fetch(fetchRequest)
+            if let objectToUpdate = result.first {
                 objectToUpdate.favourite = newStatus
                 try persistentStorageObj.context.save()
             }
         } catch {
             print("Error updating favourite status: \(error)")
         }
+    }
+    
+    func getProduct(forID id: Int16) -> CDProduct{
+        let fetchRequest: NSFetchRequest<CDProduct> = CDProduct.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "id == %d", id)
+
+        let result = try! persistentStorageObj.context.fetch(fetchRequest)
+        
+        guard result.count != 0 else {return CDProduct()}
+
+        return result.first ?? CDProduct()
+    }
+    
+    func deleteProduct(forID id: Int16) -> Bool{
+        
+        let product = getProduct(forID: id)
+        
+        persistentStorageObj.context.delete(product)
+        try! persistentStorageObj.context.save()
+        
+        return true
     }
 
 }

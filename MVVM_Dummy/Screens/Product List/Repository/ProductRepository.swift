@@ -54,6 +54,10 @@ class ProductRepository {
     func updateProductFavouriteStatus(forID id: Int16, toNewStatus newStatus: Bool) {
         productDataManager.updateProductFavouriteStatus(forID: id, toNewStatus: newStatus)
     }
+    
+    func deleteProduct(forID id: Int16) -> Bool {
+        self.productDataManager.deleteProduct(forID: id)
+    }
 }
 
 

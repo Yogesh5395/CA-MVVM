@@ -37,11 +37,16 @@ extension ProductList_ViewController {
     
     // Swipe to delete
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
+        if editingStyle == .delete { // Swipe delete
             // Update your data source and delete the row
-            self.viewModel?.productsVM.remove(at: indexPath.row)
-            self.viewModel?.filteredProductsVM.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .fade)
+            
+            if let product = self.viewModel?.productsVM[indexPath.row] {
+                if let status = self.viewModel?.deleteProduct(forID: product.id), status {
+                    self.viewModel?.productsVM.remove(at: indexPath.row)
+                    self.viewModel?.filteredProductsVM.remove(at: indexPath.row)
+                    tableView.deleteRows(at: [indexPath], with: .fade)
+                }
+            }
         }
     }
 

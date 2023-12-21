@@ -22,4 +22,8 @@ class ProductUseCase {
     func updateProductFavouriteStatus(forID id: Int16, toNewStatus newStatus: Bool) {
         repository.updateProductFavouriteStatus(forID: id, toNewStatus: newStatus)
     }
+    
+    func deleteProduct(forID id: Int16) -> Bool {
+        repository.deleteProduct(forID: id)
+    }
 }
