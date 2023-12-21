@@ -32,5 +32,10 @@ class ProductViewModel {
             }
         }
     }
+    
+    func updateProductFavouriteStatus(forID id: Int16, toNewStatus newStatus: Bool) {
+        self.productUseCase.updateProductFavouriteStatus(forID: id, toNewStatus: newStatus)
+    }
+    
 }
 

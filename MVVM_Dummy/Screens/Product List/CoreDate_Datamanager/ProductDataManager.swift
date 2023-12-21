@@ -58,5 +58,21 @@ struct ProductDataManager {
         
         return record?.convertToProduct()
     }
+    
+    func updateProductFavouriteStatus(forID id: Int16, toNewStatus newStatus: Bool) {
+        let fetchRequest: NSFetchRequest<CDProduct> = CDProduct.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "id == %d", id)
+
+        do {
+            let results = try persistentStorageObj.context.fetch(fetchRequest)
+            if let objectToUpdate = results.first {
+                objectToUpdate.favourite = newStatus
+                try persistentStorageObj.context.save()
+            }
+        } catch {
+            print("Error updating favourite status: \(error)")
+        }
+    }
+
 }
 

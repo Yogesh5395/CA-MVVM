@@ -19,4 +19,7 @@ class ProductUseCase {
         repository.fetch(completion: completion)
     }
     
+    func updateProductFavouriteStatus(forID id: Int16, toNewStatus newStatus: Bool) {
+        repository.updateProductFavouriteStatus(forID: id, toNewStatus: newStatus)
+    }
 }

@@ -15,7 +15,7 @@ class SingleProductViewModel {
     
     var favourite: Bool {
         get {
-            return product.favourite ?? false
+            return product.favourite
         }
         set(newFavouriteValue) {
             product.favourite = newFavouriteValue

@@ -133,6 +133,8 @@ class ProductList_ViewController: ChildViewController {
                     sender.setImage(image, for: .normal)
                 }
             }
+            
+            self.viewModel?.updateProductFavouriteStatus(forID: product.id, toNewStatus: product.favourite)
         }
     }
     
