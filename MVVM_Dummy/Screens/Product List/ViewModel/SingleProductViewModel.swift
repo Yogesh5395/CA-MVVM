@@ -9,6 +9,10 @@ import Foundation
 
 class SingleProductViewModel {
     
+//    var id: UUID {
+//        return product.id
+//    }
+    
     var title: String {
         return product.title
     }

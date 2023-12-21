@@ -44,7 +44,8 @@ class ProductRepository {
                 }
                 self.productServiceImplementation.fetch(completion: completion)
                 break
-            case .failure(_):
+            case .failure(let error):
+                print(error)
                 break
             }
         }

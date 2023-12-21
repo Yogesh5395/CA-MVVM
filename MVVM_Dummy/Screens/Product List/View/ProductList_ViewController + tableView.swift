@@ -28,4 +28,18 @@ extension ProductList_ViewController {
         cell.productVM = viewModel?.filteredProductsVM[indexPath.row]
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    // Swipe to delete
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            // Update your data source and delete the row
+            self.viewModel?.productsVM.remove(at: indexPath.row)
+            self.viewModel?.filteredProductsVM.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
 }

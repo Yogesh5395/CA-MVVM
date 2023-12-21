@@ -20,7 +20,7 @@ struct ProductDataManager {
         
         let cdProduct = CDProduct(context: persistentStorageObj.context)
         
-//        cdProduct.id = record.id
+//        cdProduct.id           = record.id
         cdProduct.image        = record.image
         cdProduct.title        = record.title
         cdProduct.price        = record.price
