@@ -7,7 +7,7 @@
 
 import Foundation
 
-
+var productCount: Int = 0
 
 enum Constant {
     

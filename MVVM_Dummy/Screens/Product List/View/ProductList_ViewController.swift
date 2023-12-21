@@ -71,6 +71,7 @@ class ProductList_ViewController: ChildViewController {
             case .dataLoad:
                 DispatchQueue.main.async {
                     if let products = self.viewModel?.productsVM{
+                        productCount = products.count // Set product count globally
                         self.viewModel?.filteredProductsVM =  products
                         self.childTableViewController.tableView.reloadData()
                     }
