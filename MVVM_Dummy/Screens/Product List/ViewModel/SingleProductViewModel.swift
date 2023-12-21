@@ -9,9 +9,9 @@ import Foundation
 
 class SingleProductViewModel {
     
-//    var id: UUID {
-//        return product.id
-//    }
+    var id: Int16 {
+        return product.id
+    }
     
     var favourite: Bool {
         get {

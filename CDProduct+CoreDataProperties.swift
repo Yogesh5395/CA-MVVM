@@ -18,7 +18,7 @@ extension CDProduct {
 
     @NSManaged public var category: String?
     @NSManaged public var descriptio_n: String?
-    @NSManaged public var id: UUID?
+    @NSManaged public var id: Int16
     @NSManaged public var image: String?
     @NSManaged public var price: Double
     @NSManaged public var title: String?
