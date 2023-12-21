@@ -13,7 +13,6 @@ class ProductList_ViewController: ChildViewController {
     
     override var isEditing: Bool {
         didSet {
-//            isEditing = !isEditing
             // Your custom code for handling changes in editing state
             childTableViewController.tableView.setEditing(isEditing, animated: true)
             // Any additional logic you want to execute when editing mode changes
@@ -31,9 +30,6 @@ class ProductList_ViewController: ChildViewController {
         childTableViewController.tableView.register(UINib(nibName: CellId_and_Nib_ProductList_ViewController.ProductCell, bundle: nil), forCellReuseIdentifier: CellId_and_Nib_ProductList_ViewController.ProductCell)
         
         configuration()
-        
-//        self.addProduct?.productListClosure = self
-//        self.addProduct?.addProductDelegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -95,13 +91,6 @@ class ProductList_ViewController: ChildViewController {
             break
         }
     }
-    
-//    override func editTapped() {
-//        print("edit button clicked...")
-//        super.setEditing(true, animated: true)
-//        self.childTableViewController.setEditing(true, animated: true)
-//        self.childTableViewController.tableView.allowsMultipleSelectionDuringEditing = true
-//    }
     
     override func editTapped() {
         
