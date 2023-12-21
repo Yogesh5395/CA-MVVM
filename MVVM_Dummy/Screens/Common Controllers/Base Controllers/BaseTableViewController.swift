@@ -13,7 +13,6 @@ class BaseTableViewController: UITableViewController {
 //        print("searchcontroller: ",searchText)
 //    }
     
-
     let containerView = UIView()
     let segmentedControl = UISegmentedControl(items: ["All", "Voicemail"])
     

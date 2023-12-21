@@ -9,6 +9,8 @@ import UIKit
 
 class ProductList_ViewController: ChildViewController {
     
+    @IBOutlet weak var bottomView: UIView!
+    
     var viewModel: ProductViewModel?
     
     override var isEditing: Bool {
@@ -29,6 +31,8 @@ class ProductList_ViewController: ChildViewController {
         
         childTableViewController.tableView.register(UINib(nibName: CellId_and_Nib_ProductList_ViewController.ProductCell, bundle: nil), forCellReuseIdentifier: CellId_and_Nib_ProductList_ViewController.ProductCell)
         
+        self.view.bringSubviewToFront(self.bottomView)
+        self.bottomView.isHidden = true
         configuration()
     }
     
@@ -94,8 +98,8 @@ class ProductList_ViewController: ChildViewController {
     
     override func editTapped() {
         
+        self.bottomView.isHidden = isEditing
         isEditing = !isEditing
-        
         super.setEditing(isEditing, animated: true)
         self.childTableViewController.setEditing(isEditing, animated: true)
         self.childTableViewController.tableView.allowsMultipleSelectionDuringEditing = isEditing
@@ -108,6 +112,24 @@ class ProductList_ViewController: ChildViewController {
             tabBarController?.tabBar.isHidden = false
         }
     }
+    
+    @IBAction func favBtnTapped(_ sender: Any) {
+    }
+    
+    @IBAction func deletebtnTapped(_ sender: Any) {
+        
+        if let selectedRows = self.childTableViewController.tableView.indexPathsForSelectedRows {
+            // Reverse sort the indices so that we remove items from the end first
+            let sortedIndices = selectedRows.sorted { $0.row > $1.row }
+            for indexPath in sortedIndices {
+                self.viewModel?.productsVM.remove(at: indexPath.row)
+                self.viewModel?.filteredProductsVM.remove(at: indexPath.row)
+            }
+            self.childTableViewController.tableView.deleteRows(at: selectedRows, with: .automatic)
+            editTapped()
+        }
+    }
+    
 }
 
 extension ProductList_ViewController: addProduct {

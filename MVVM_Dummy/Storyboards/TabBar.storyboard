@@ -52,14 +52,54 @@
                     <view key="view" contentMode="scaleToFill" id="eSy-M2-llF">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" id="YVq-8o-SP7" userLabel="bottomView">
+                                <rect key="frame" x="0.0" y="777" width="393" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3zG-sH-XhQ">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="34.333333333333336"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jAo-u6-dSx">
+                                                <rect key="frame" x="0.0" y="0.0" width="196.66666666666666" height="34.333333333333336"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Favourite"/>
+                                                <connections>
+                                                    <action selector="favBtnTapped:" destination="22w-Wv-dOJ" eventType="touchUpInside" id="7uv-AJ-Aw8"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RYm-ey-FIi">
+                                                <rect key="frame" x="196.66666666666663" y="0.0" width="196.33333333333337" height="34.333333333333336"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Delete"/>
+                                                <connections>
+                                                    <action selector="deletebtnTapped:" destination="22w-Wv-dOJ" eventType="touchUpInside" id="e3O-yp-cxY"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="3zG-sH-XhQ" secondAttribute="trailing" id="8pF-ox-hVr"/>
+                                    <constraint firstItem="3zG-sH-XhQ" firstAttribute="top" secondItem="YVq-8o-SP7" secondAttribute="top" id="Ieb-G6-AXc"/>
+                                    <constraint firstAttribute="bottom" secondItem="3zG-sH-XhQ" secondAttribute="bottom" id="ZFI-Pn-Ekh"/>
+                                    <constraint firstAttribute="height" constant="100" id="d67-jH-fag"/>
+                                    <constraint firstItem="3zG-sH-XhQ" firstAttribute="leading" secondItem="YVq-8o-SP7" secondAttribute="leading" id="tYe-Iv-dV4"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="dYn-V8-Og0"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="uk7-1k-s4p"/>
+                    <connections>
+                        <outlet property="bottomView" destination="YVq-8o-SP7" id="ePc-Yg-4me"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BMu-ct-Rgn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="179" y="217"/>
+            <point key="canvasLocation" x="176.33587786259542" y="216.90140845070422"/>
         </scene>
         <!--Child View Controller-->
         <scene sceneID="iTd-Dz-EUE">
