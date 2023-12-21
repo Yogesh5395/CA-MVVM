@@ -11,6 +11,8 @@
 		EC053FB22B34417800C9D466 /* CDRate+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC053FAE2B34417800C9D466 /* CDRate+CoreDataProperties.swift */; };
 		EC053FB32B34417800C9D466 /* CDProduct+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC053FAF2B34417800C9D466 /* CDProduct+CoreDataClass.swift */; };
 		EC053FB42B34417800C9D466 /* CDProduct+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC053FB02B34417800C9D466 /* CDProduct+CoreDataProperties.swift */; };
+		EC053FB82B34595E00C9D466 /* ProductList_ViewController + btnAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC053FB72B34595E00C9D466 /* ProductList_ViewController + btnAction.swift */; };
+		EC053FBA2B345A5800C9D466 /* ProductList_ViewController + Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC053FB92B345A5800C9D466 /* ProductList_ViewController + Delegate.swift */; };
 		EC27AD892B22F8B700A4ED1F /* ProductList_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC27AD882B22F8B700A4ED1F /* ProductList_ViewController.swift */; };
 		EC27AD8D2B23027C00A4ED1F /* Storybord.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC27AD8C2B23027C00A4ED1F /* Storybord.swift */; };
 		EC27AD8F2B23032700A4ED1F /* ImageName.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC27AD8E2B23032700A4ED1F /* ImageName.swift */; };
@@ -109,6 +111,8 @@
 		EC053FAE2B34417800C9D466 /* CDRate+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDRate+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		EC053FAF2B34417800C9D466 /* CDProduct+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDProduct+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		EC053FB02B34417800C9D466 /* CDProduct+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDProduct+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		EC053FB72B34595E00C9D466 /* ProductList_ViewController + btnAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProductList_ViewController + btnAction.swift"; sourceTree = "<group>"; };
+		EC053FB92B345A5800C9D466 /* ProductList_ViewController + Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProductList_ViewController + Delegate.swift"; sourceTree = "<group>"; };
 		EC27AD882B22F8B700A4ED1F /* ProductList_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductList_ViewController.swift; sourceTree = "<group>"; };
 		EC27AD8C2B23027C00A4ED1F /* Storybord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storybord.swift; sourceTree = "<group>"; };
 		EC27AD8E2B23032700A4ED1F /* ImageName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageName.swift; sourceTree = "<group>"; };
@@ -398,6 +402,8 @@
 			isa = PBXGroup;
 			children = (
 				EC27AD882B22F8B700A4ED1F /* ProductList_ViewController.swift */,
+				EC053FB92B345A5800C9D466 /* ProductList_ViewController + Delegate.swift */,
+				EC053FB72B34595E00C9D466 /* ProductList_ViewController + btnAction.swift */,
 				ECF0EB572B317D6E00F4338D /* ProductList_ViewController + Navigation.swift */,
 				EC470C5C2B259C8C003C3063 /* ProductList_ViewController + tableView.swift */,
 				ECF02B672B25D16100C72F9F /* ProductList_ViewController + SearchBar.swift */,
@@ -719,9 +725,11 @@
 				ECF0EB352B3028FC00F4338D /* CoreData_ProductExtension.swift in Sources */,
 				ECBD5BC82B20898700AB2C48 /* Constant.swift in Sources */,
 				ECAB38BA2B298E4D0058833B /* ProductService.swift in Sources */,
+				EC053FB82B34595E00C9D466 /* ProductList_ViewController + btnAction.swift in Sources */,
 				ECF0EB692B31ADCA00F4338D /* AddProductViewModel.swift in Sources */,
 				ECF0EAA52B2C3ACC00F4338D /* PersistentStorage.swift in Sources */,
 				ECF0EB582B317D6E00F4338D /* ProductList_ViewController + Navigation.swift in Sources */,
+				EC053FBA2B345A5800C9D466 /* ProductList_ViewController + Delegate.swift in Sources */,
 				ECF0EAA02B2B20E800F4338D /* ProductServiceImpl.swift in Sources */,
 				ECF0CCDA2B236D6E00749C03 /* ProductViewModel.swift in Sources */,
 				EC053FB42B34417800C9D466 /* CDProduct+CoreDataProperties.swift in Sources */,

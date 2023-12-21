@@ -98,16 +98,6 @@ class ProductList_ViewController: ChildViewController {
         }
     }
     
-    func filterFavProducts() {
-        if let productsVM = self.viewModel?.productsVM {
-            viewModel?.filteredProductsVM = productsVM.filter { product in
-                return product.favourite
-            }
-        }
-        
-        self.childTableViewController.tableView.reloadData()
-    }
-    
     override func editTapped() {
         
         self.bottomView.isHidden = isEditing
@@ -122,58 +112,6 @@ class ProductList_ViewController: ChildViewController {
         } else {
             // Show the tab bar when not in editing mode
             tabBarController?.tabBar.isHidden = false
-        }
-    }
-    
-    @IBAction func favBtnTapped(_ sender: Any) {
-        
-    
-    }
-    
-    @objc func cellFavBtnTapped(sender: UIButton) {
-    
-        if let product = self.viewModel?.productsVM[sender.tag] {
-            product.favourite = !product.favourite
-            
-            if product.favourite {
-                if let image = UIImage(systemName: "heart.fill")?.withTintColor(.red, renderingMode: .alwaysOriginal) {
-                    sender.setImage(image, for: .normal)
-                }
-            }else{
-                if let image = UIImage(systemName: "heart.fill")?.withTintColor(.gray, renderingMode: .alwaysOriginal) {
-                    sender.setImage(image, for: .normal)
-                }
-            }
-            
-            self.viewModel?.updateProductFavouriteStatus(forID: product.id, toNewStatus: product.favourite)
-        }
-    }
-    
-    @IBAction func deletebtnTapped(_ sender: Any) {
-        
-        if let selectedRows = self.childTableViewController.tableView.indexPathsForSelectedRows {
-            // Reverse sort the indices so that we remove items from the end first
-            let sortedIndices = selectedRows.sorted { $0.row > $1.row }
-            for indexPath in sortedIndices {
-                self.viewModel?.productsVM.remove(at: indexPath.row)
-                self.viewModel?.filteredProductsVM.remove(at: indexPath.row)
-            }
-            self.childTableViewController.tableView.deleteRows(at: selectedRows, with: .automatic)
-            editTapped()
-        }
-    }
-    
-}
-
-extension ProductList_ViewController: addProduct {
-    func productUploaded(productVM: SingleProductViewModel) {
-        DispatchQueue.main.async {
-            
-            self.viewModel?.productsVM.insert(productVM, at: 0)
-            if let products = self.viewModel?.productsVM{
-                self.viewModel?.filteredProductsVM =  products
-                self.childTableViewController.tableView.reloadData()
-            }
         }
     }
 }
