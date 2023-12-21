@@ -78,4 +78,20 @@ class PersistentStorage {
         return nil
     }
     
+    func fetchTopManagedObject<T: NSManagedObject>(managedObject: T.Type) -> T? {
+        
+        let fetchRequest = NSFetchRequest<T>(entityName: String(describing: T.self))
+        fetchRequest.fetchLimit = 1
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "id", ascending: true)]
+        
+        do {
+            let result = try context.fetch(fetchRequest)
+            return result.first // Since fetchLimit is 1, the array contains at most one object
+        } catch let error {
+            print("Error fetching top object: \(error)")
+            return nil
+        }
+    }
+
+    
 }

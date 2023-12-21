@@ -10,11 +10,10 @@ import Foundation
 class AddProductViewModel {
     
     var productsVM:[SingleProductViewModel] = []
-    
+    var productVM:SingleProductViewModel?
     var eventHandler: (((Event)?) -> Void)?
     
     let addProductUseCases: AddProductUseCases
-    
     init(addProductUseCases: AddProductUseCases) {
         self.addProductUseCases = addProductUseCases
     }
@@ -22,12 +21,11 @@ class AddProductViewModel {
     func uploadProduct() {
         
         self.eventHandler?(.loading)
-        
         self.addProductUseCases.uploadProduct { response in
             self.eventHandler?(.stopLoading)
-            
             switch response {
-            case .success(_):
+            case .success(let product):
+                self.productVM = SingleProductViewModel.init(product: product)
                 self.eventHandler?(.dataLoad)
             case .failure(let error):
                 self.eventHandler?(.error(error))

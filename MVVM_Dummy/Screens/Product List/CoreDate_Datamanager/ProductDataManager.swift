@@ -49,5 +49,14 @@ struct ProductDataManager {
         
         return results
     }
+    
+    func fetchTopProduct() -> Product? {
+        
+        let record = persistentStorageObj.fetchTopManagedObject(managedObject: CDProduct.self)
+        
+        guard record != nil else {return nil}
+        
+        return record?.convertToProduct()
+    }
 }
 

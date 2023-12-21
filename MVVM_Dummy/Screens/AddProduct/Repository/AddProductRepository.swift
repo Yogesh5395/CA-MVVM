@@ -11,13 +11,15 @@ class AddProductRepository {
     
     let addProductService: AddProductService
     let productDatamanager: ProductDataManager
+    let productViewModel: ProductViewModel
     
-    init(addProductService: AddProductService, productDatamanager: ProductDataManager) {
-        self.addProductService = addProductService
+    init(addProductService: AddProductService, productDatamanager: ProductDataManager, productViewModel: ProductViewModel) {
+        self.addProductService  = addProductService
         self.productDatamanager = productDatamanager
+        self.productViewModel   = productViewModel
     }
     
-    func uploadProduct(completion: @escaping (Result<Bool, DataError>) -> Void) {
+    func uploadProduct(completion: @escaping (Result<Product, DataError>) -> Void) {
         
         addProductService.uploadProduct { result in
             switch result {
@@ -27,8 +29,16 @@ class AddProductRepository {
                 
                 let productsVM = SingleProductViewModel(product: modifProduct)
                 self.productDatamanager.inserData(record: productsVM)
+                self.productViewModel.productsVM.append(productsVM)
                 
-                completion(.success(true))
+                completion(.success(modifProduct))
+                
+//                if let latestProduct = self.productDatamanager.fetchTopProduct() {
+//                    completion(.success(latestProduct))
+//                }else {
+//                    completion(.success(modifProduct))
+//                }
+                
             case .failure(let error):
                print(error)
             completion(.failure(error))

@@ -15,7 +15,7 @@ class AddProductUseCases {
         self.addProductRepository = addProductRepository
     }
     
-    func uploadProduct(completion: @escaping (Result<Bool, DataError>) -> Void) {
+    func uploadProduct(completion: @escaping (Result<Product, DataError>) -> Void) {
         addProductRepository.uploadProduct(completion: completion)
     }
 }

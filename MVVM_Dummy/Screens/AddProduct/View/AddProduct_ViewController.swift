@@ -8,7 +8,7 @@
 import UIKit
 
 protocol addProduct {
-    func productUploaded()
+    func productUploaded(productVM: SingleProductViewModel)
 }
 
 class AddProduct_ViewController: UISearchController {
@@ -24,8 +24,7 @@ class AddProduct_ViewController: UISearchController {
     }
     
     func configuration() {
-        let parameter = AddProduct(title: "Hare Krishna :)")
-        
+        let parameter = AddProduct(title: "Jai Shyam Sundar :)")
         
         let apiManager            = APIManager() // Common API class
         let serviceImplementation = AddProductServiceImpl(apiManager: apiManager, product: parameter)
@@ -33,7 +32,14 @@ class AddProduct_ViewController: UISearchController {
         let persistentStorageObj  = PersistentStorage() // Common Core Data class
         let productDataManager    = ProductDataManager(persistentStorageObj: persistentStorageObj)
         
-        let addProductRepository = AddProductRepository(addProductService: serviceImplementation, productDatamanager: productDataManager)
+        let serviceImpl = ProductServiceImpl(apiManager: apiManager)
+        let productRepository = ProductRepository(productServiceImplementation: serviceImpl, productDataManager: productDataManager)
+        
+        let productUseCase = ProductUseCase(repository: productRepository)
+        
+        let productViewModel = ProductViewModel(productUseCase: productUseCase)
+        
+        let addProductRepository = AddProductRepository(addProductService: serviceImplementation, productDatamanager: productDataManager, productViewModel: productViewModel)
         
         let addProductUseCase = AddProductUseCases(addProductRepository: addProductRepository)
         viewModel          = AddProductViewModel(addProductUseCases: addProductUseCase)
@@ -58,9 +64,11 @@ class AddProduct_ViewController: UISearchController {
             case .stopLoading:
                 print("loading completed ...")
             case .dataLoad:
-                addProductDelegate?.productUploaded()
-                DispatchQueue.main.async {
-                    self.navigationController?.popViewController(animated: true)
+                if let productVM = viewModel?.productVM {
+                    DispatchQueue.main.async {
+                        self.addProductDelegate?.productUploaded(productVM: productVM)
+                        self.navigationController?.popViewController(animated: true)
+                    }
                 }
             case .error(let error):
                 print(error!)

@@ -89,13 +89,14 @@ class ProductList_ViewController: ChildViewController {
 }
 
 extension ProductList_ViewController: addProduct {
-    func productUploaded() {
+    func productUploaded(productVM: SingleProductViewModel) {
         DispatchQueue.main.async {
-            self.viewModel?.fetchProductList()
+            
+            self.viewModel?.productsVM.insert(productVM, at: 0)
             if let products = self.viewModel?.productsVM{
                 self.viewModel?.filteredProductsVM =  products
+                self.childTableViewController.tableView.reloadData()
             }
-            self.childTableViewController.tableView.reloadData()
         }
     }
 }

@@ -93,9 +93,6 @@
 		ECF0EB792B31B33B00F4338D /* AddProductUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF0EB782B31B33B00F4338D /* AddProductUseCases.swift */; };
 		ECF0EB7A2B31B33B00F4338D /* AddProductUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF0EB782B31B33B00F4338D /* AddProductUseCases.swift */; };
 		ECF0EB7B2B31B33B00F4338D /* AddProductUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF0EB782B31B33B00F4338D /* AddProductUseCases.swift */; };
-		ECF0EB7D2B32CC9A00F4338D /* CommonTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF0EB7C2B32CC9A00F4338D /* CommonTableViewController.swift */; };
-		ECF0EB7E2B32CC9A00F4338D /* CommonTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF0EB7C2B32CC9A00F4338D /* CommonTableViewController.swift */; };
-		ECF0EB7F2B32CC9A00F4338D /* CommonTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF0EB7C2B32CC9A00F4338D /* CommonTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -172,7 +169,6 @@
 		ECF0EB702B31AE8900F4338D /* AddProductServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductServiceImpl.swift; sourceTree = "<group>"; };
 		ECF0EB742B31B20F00F4338D /* AddProductRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductRepository.swift; sourceTree = "<group>"; };
 		ECF0EB782B31B33B00F4338D /* AddProductUseCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductUseCases.swift; sourceTree = "<group>"; };
-		ECF0EB7C2B32CC9A00F4338D /* CommonTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -229,7 +225,6 @@
 			children = (
 				ECBD5BD32B21ABA600AB2C48 /* BaseTableViewController.swift */,
 				ECBD5BCB2B20AC3F00AB2C48 /* ChildViewController.swift */,
-				ECF0EB7C2B32CC9A00F4338D /* CommonTableViewController.swift */,
 			);
 			path = "Base Controllers";
 			sourceTree = "<group>";
@@ -707,7 +702,6 @@
 			files = (
 				ECF0EB302B300BEF00F4338D /* RateDataManager.swift in Sources */,
 				ECBD5BCC2B20AC4000AB2C48 /* ChildViewController.swift in Sources */,
-				ECF0EB7D2B32CC9A00F4338D /* CommonTableViewController.swift in Sources */,
 				ECF0CCD82B235FC500749C03 /* APIManager.swift in Sources */,
 				ECF0EB792B31B33B00F4338D /* AddProductUseCases.swift in Sources */,
 				ECBD5BCE2B20AC4F00AB2C48 /* SettingsViewController.swift in Sources */,
@@ -759,7 +753,6 @@
 				ECF0EB722B31AE8900F4338D /* AddProductServiceImpl.swift in Sources */,
 				ECF0EB312B300BEF00F4338D /* RateDataManager.swift in Sources */,
 				ECF0EB362B3028FC00F4338D /* CoreData_ProductExtension.swift in Sources */,
-				ECF0EB7E2B32CC9A00F4338D /* CommonTableViewController.swift in Sources */,
 				ECF0EB762B31B20F00F4338D /* AddProductRepository.swift in Sources */,
 				ECF0EB552B317CA100F4338D /* AddProduct_ViewController.swift in Sources */,
 				ECF0EB3D2B30409100F4338D /* CDRate+CoreDataClass.swift in Sources */,
@@ -784,7 +777,6 @@
 				ECF0EB6B2B31ADCA00F4338D /* AddProductViewModel.swift in Sources */,
 				ECF0EB2E2B300BCA00F4338D /* ProductDataManager.swift in Sources */,
 				ECF0EB6F2B31AE7100F4338D /* AddProductService.swift in Sources */,
-				ECF0EB7F2B32CC9A00F4338D /* CommonTableViewController.swift in Sources */,
 				ECF0EB3E2B30409100F4338D /* CDRate+CoreDataClass.swift in Sources */,
 				ECF0EB372B3028FC00F4338D /* CoreData_ProductExtension.swift in Sources */,
 				ECF0EB322B300BEF00F4338D /* RateDataManager.swift in Sources */,
