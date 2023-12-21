@@ -11,6 +11,15 @@ class ProductList_ViewController: ChildViewController {
     
     var viewModel: ProductViewModel?
     
+    override var isEditing: Bool {
+        didSet {
+//            isEditing = !isEditing
+            // Your custom code for handling changes in editing state
+            childTableViewController.tableView.setEditing(isEditing, animated: true)
+            // Any additional logic you want to execute when editing mode changes
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -84,6 +93,30 @@ class ProductList_ViewController: ChildViewController {
             // Implement your code for the "Voicemail" segment
         default:
             break
+        }
+    }
+    
+//    override func editTapped() {
+//        print("edit button clicked...")
+//        super.setEditing(true, animated: true)
+//        self.childTableViewController.setEditing(true, animated: true)
+//        self.childTableViewController.tableView.allowsMultipleSelectionDuringEditing = true
+//    }
+    
+    override func editTapped() {
+        
+        isEditing = !isEditing
+        
+        super.setEditing(isEditing, animated: true)
+        self.childTableViewController.setEditing(isEditing, animated: true)
+        self.childTableViewController.tableView.allowsMultipleSelectionDuringEditing = isEditing
+        
+        if isEditing {
+            // Hide the tab bar if in editing mode
+            tabBarController?.tabBar.isHidden = true
+        } else {
+            // Show the tab bar when not in editing mode
+            tabBarController?.tabBar.isHidden = false
         }
     }
 }
