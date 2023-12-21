@@ -87,14 +87,25 @@ class ProductList_ViewController: ChildViewController {
         // Handle the segment change
         switch sender.selectedSegmentIndex {
         case 0:
-            print("All selected .....////")
-            // Implement your code for the "All" segment
+            if let productsVM = self.viewModel?.productsVM {
+                viewModel?.filteredProductsVM = productsVM
+                self.childTableViewController.tableView.reloadData()
+            }
         case 1:
-            print("Voicemail selected .....////")
-            // Implement your code for the "Voicemail" segment
+            filterFavProducts()
         default:
             break
         }
+    }
+    
+    func filterFavProducts() {
+        if let productsVM = self.viewModel?.productsVM {
+            viewModel?.filteredProductsVM = productsVM.filter { product in
+                return product.favourite
+            }
+        }
+        
+        self.childTableViewController.tableView.reloadData()
     }
     
     override func editTapped() {
