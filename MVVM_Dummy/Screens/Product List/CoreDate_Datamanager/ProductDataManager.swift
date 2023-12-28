@@ -26,6 +26,7 @@ struct ProductDataManager {
         cdProduct.price        = record.price
         cdProduct.category     = record.category
         cdProduct.descriptio_n = record.description
+        cdProduct.isDeleted_   = record.isDeleted_
         
         
         let cdRate   = CDRate(context: persistentStorageObj.context)
@@ -67,6 +68,21 @@ struct ProductDataManager {
             let result = try persistentStorageObj.context.fetch(fetchRequest)
             if let objectToUpdate = result.first {
                 objectToUpdate.favourite = newStatus
+                try persistentStorageObj.context.save()
+            }
+        } catch {
+            print("Error updating favourite status: \(error)")
+        }
+    }
+    
+    func updateProductFavouriteDeleteStatus(forID id: Int16, toNewStatus newStatus: Bool) {
+        let fetchRequest: NSFetchRequest<CDProduct> = CDProduct.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "id == %d", id)
+
+        do {
+            let result = try persistentStorageObj.context.fetch(fetchRequest)
+            if let objectToUpdate = result.first {
+                objectToUpdate.isDeleted_ = newStatus
                 try persistentStorageObj.context.save()
             }
         } catch {

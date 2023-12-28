@@ -51,9 +51,17 @@ class ProductCell: UITableViewCell {
         productRating.setTitle("\(product.rating.rate)", for: .normal)
         
         if product.favourite {
-            if let image = UIImage(systemName: "heart.fill")?.withTintColor(.red, renderingMode: .alwaysOriginal) {
-                favouriteBtn.setImage(image, for: .normal)
+            
+            if product.isDeleted_ {
+                if let image = UIImage(systemName: "repeat.circle.fill")?.withTintColor(.green, renderingMode: .alwaysOriginal) {
+                    favouriteBtn.setImage(image, for: .normal)
+                }
+            }else {
+                if let image = UIImage(systemName: "heart.fill")?.withTintColor(.red, renderingMode: .alwaysOriginal) {
+                    favouriteBtn.setImage(image, for: .normal)
+                }
             }
+            
         }else{
             if let image = UIImage(systemName: "heart.fill")?.withTintColor(.gray, renderingMode: .alwaysOriginal) {
                 favouriteBtn.setImage(image, for: .normal)

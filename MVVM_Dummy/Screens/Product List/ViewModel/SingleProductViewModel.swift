@@ -15,10 +15,19 @@ class SingleProductViewModel {
     
     var favourite: Bool {
         get {
-            return product.favourite
+            return product.favourite ?? false
         }
         set(newFavouriteValue) {
             product.favourite = newFavouriteValue
+        }
+    }
+    
+    var isDeleted_: Bool {
+        get {
+            return product.isDeleted_ ?? false
+        }
+        set(newisDeleted_Value) {
+            product.isDeleted_ = newisDeleted_Value
         }
     }
     

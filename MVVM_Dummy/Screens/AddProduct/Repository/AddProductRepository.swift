@@ -25,7 +25,7 @@ class AddProductRepository {
             switch result {
             case .success(let product):
                 productCount += 1
-                let modifProduct = Product(id: Int16(productCount), image: "", title: product.title, category: "hardcore category", price: 0.00, rating: Rate(rate: 0.00, count: 00), description: "hardcore description", favourite: false)
+                let modifProduct = Product(id: Int16(productCount), image: "", title: product.title, category: "hardcore category", price: 0.00, rating: Rate(rate: 0.00, count: 00), description: "hardcore description", favourite: false, isDeleted_: false)
                 
                 let productsVM = SingleProductViewModel(product: modifProduct)
                 self.productDatamanager.inserData(record: productsVM)

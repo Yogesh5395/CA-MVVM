@@ -11,7 +11,7 @@ import CoreData
 extension CDProduct
 {
     func convertToProduct() -> Product {
-        return Product(id: self.id, image: image ?? "", title: title ?? "", category: category ?? "", price: price , rating: self.toRate?.convertToRate() ?? Rate(rate: 0.0, count: 0), description: description, favourite: favourite)
+        return Product(id: self.id, image: image ?? "", title: title ?? "", category: category ?? "", price: price , rating: self.toRate?.convertToRate() ?? Rate(rate: 0.0, count: 0), description: description, favourite: favourite, isDeleted_: isDeleted_)
     }
 }
 

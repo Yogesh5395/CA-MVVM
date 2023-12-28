@@ -11,6 +11,9 @@ import UIKit
 extension ProductList_ViewController {
     
     func numberOfSections(in tableView: UITableView) -> Int {
+        if selectedSegmentIndex == 1 && isSearchActive == false{
+            return 2
+        }
         return 1
     }
     
@@ -19,6 +22,31 @@ extension ProductList_ViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        if isSearchActive && selectedSegmentIndex == 1{
+            return viewModel?.deletedFavProductsVM.count ?? 0
+        }else if isSearchActive && selectedSegmentIndex == 0 {
+            return viewModel?.filteredProductsVM.count ?? 0
+        }
+        
+        if selectedSegmentIndex == 1 {
+            if section == 1 {
+                return viewModel?.filterDeletedProducts().count ?? 0
+            }else {
+                
+                if let productsVM = self.viewModel?.filterOutDeletedProducts(){
+                    viewModel?.filteredProductsVM = productsVM.filter { product in
+                        return product.favourite
+                    }
+                }
+                
+                return viewModel?.filteredProductsVM.count ?? 0
+            }
+        }
+        
+        if let products = self.viewModel?.filterOutDeletedProducts(){
+            self.viewModel?.filteredProductsVM =  products
+        }
         return viewModel?.filteredProductsVM.count ?? 0
     }
     
@@ -27,7 +55,17 @@ extension ProductList_ViewController {
         
         cell.favouriteBtn.tag = indexPath.row
         cell.favouriteBtn.addTarget(self, action: #selector(cellFavBtnTapped(sender:)), for: .touchUpInside)
-        cell.productVM = viewModel?.filteredProductsVM[indexPath.row]
+        
+        if isSearchActive && selectedSegmentIndex == 1{
+            cell.productVM = viewModel?.deletedFavProductsVM[indexPath.row]
+        }else {
+            if indexPath.section == 0 {
+                cell.productVM = viewModel?.filteredProductsVM[indexPath.row]
+            }else {
+                cell.productVM = viewModel?.deletedProductsVM[indexPath.row]
+            }
+        }
+        
         return cell
     }
     
@@ -40,11 +78,59 @@ extension ProductList_ViewController {
         if editingStyle == .delete { // Swipe delete
             // Update your data source and delete the row
             
-            if let product = self.viewModel?.productsVM[indexPath.row] {
-                if let status = self.viewModel?.deleteProduct(forID: product.id), status {
-                    self.viewModel?.productsVM.remove(at: indexPath.row)
-                    self.viewModel?.filteredProductsVM.remove(at: indexPath.row)
-                    tableView.deleteRows(at: [indexPath], with: .fade)
+            if isSearchActive { // for search bar
+                if let product = self.viewModel?.deletedFavProductsVM[indexPath.row] {
+                    if product.favourite && !product.isDeleted_{ // Inside the ALL tab, temparay deleting the favourite product and updating the delete status
+                        self.viewModel?.updateProductFavouriteDeleteStatus(forID: product.id, toNewStatus: product.favourite)
+                        product.isDeleted_ = product.favourite
+                        self.viewModel?.deletedFavProductsVM.remove(at: indexPath.row)
+                        tableView.deleteRows(at: [indexPath], with: .fade)
+                    }else {  // Inside the ALL tab, permanant deleting the product which is not favourite
+                        if let status = self.viewModel?.deleteProduct(forID: product.id), status {
+                            product.isDeleted_ = true
+                            self.viewModel?.deletedFavProductsVM.remove(at: indexPath.row)
+                            tableView.deleteRows(at: [indexPath], with: .fade)
+                        }
+                    }
+                }
+                return
+            }
+            
+            if selectedSegmentIndex == 0 { // Inside the ALL tab, 
+                if let product = self.viewModel?.nonDeletedProductsVM[indexPath.row] {
+                    if product.favourite { // Inside the ALL tab, temparay deleting the favourite product and updating the delete status
+                        self.viewModel?.updateProductFavouriteDeleteStatus(forID: product.id, toNewStatus: product.favourite)
+                        product.isDeleted_ = product.favourite
+                        self.viewModel?.nonDeletedProductsVM.remove(at: indexPath.row)
+                        self.viewModel?.filteredProductsVM.remove(at: indexPath.row)
+                        tableView.deleteRows(at: [indexPath], with: .fade)
+                    }else {  // Inside the ALL tab, permanant deleting the product which is not favourite
+                        if let status = self.viewModel?.deleteProduct(forID: product.id), status {
+                            product.isDeleted_ = true
+                            self.viewModel?.nonDeletedProductsVM.remove(at: indexPath.row)
+                            self.viewModel?.filteredProductsVM.remove(at: indexPath.row)
+                            tableView.deleteRows(at: [indexPath], with: .fade)
+                        }
+                    }
+                }
+            }else { // Inside the favourite tab
+                if indexPath.section == 0 {
+                    if let product = self.viewModel?.filteredProductsVM[indexPath.row] {
+                        if product.favourite { // Inside the favourite tab, temparay deleting the favourite product and updating the delete status
+                            self.viewModel?.updateProductFavouriteDeleteStatus(forID: product.id, toNewStatus: product.favourite)
+                            product.isDeleted_ = product.favourite
+                            self.viewModel?.filteredProductsVM.remove(at: indexPath.row)
+                            tableView.deleteRows(at: [indexPath], with: .fade)
+                        }
+                    }
+                }else { // Inside the Favourite tab,deleted product permanant deleting the product
+                    if let product = self.viewModel?.deletedProductsVM[indexPath.row] {
+                        if let status = self.viewModel?.deleteProduct(forID: product.id), status {
+                            product.isDeleted_ = true
+                            self.viewModel?.deletedProductsVM.remove(at: indexPath.row)
+                            tableView.deleteRows(at: [indexPath], with: .fade)
+                        }
+                    }
                 }
             }
         }
@@ -52,5 +138,21 @@ extension ProductList_ViewController {
 
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return UITableView.automaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        
+        if selectedSegmentIndex == 1 {
+            if section == 0 {
+                return "Favourite Products"
+            }else {
+                
+                if viewModel?.deletedProductsVM.count != 0 {
+                    return "Deleted Favourite Products"
+                }
+            }
+        }
+        
+        return ""
     }
 }

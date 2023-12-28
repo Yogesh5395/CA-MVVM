@@ -21,6 +21,10 @@ class ProductList_ViewController: ChildViewController {
         }
     }
     
+    var isSearchActive: Bool = false
+    
+    var selectedSegmentIndex: Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -70,7 +74,7 @@ class ProductList_ViewController: ChildViewController {
                 print("loading completed ...")
             case .dataLoad:
                 DispatchQueue.main.async {
-                    if let products = self.viewModel?.productsVM{
+                    if let products = self.viewModel?.filterOutDeletedProducts(){
                         productCount = products.count // Set product count globally
                         self.viewModel?.filteredProductsVM =  products
                         self.childTableViewController.tableView.reloadData()
@@ -87,11 +91,13 @@ class ProductList_ViewController: ChildViewController {
         // Handle the segment change
         switch sender.selectedSegmentIndex {
         case 0:
-            if let productsVM = self.viewModel?.productsVM {
+            selectedSegmentIndex = 0
+            if let productsVM = self.viewModel?.nonDeletedProductsVM {
                 viewModel?.filteredProductsVM = productsVM
                 self.childTableViewController.tableView.reloadData()
             }
         case 1:
+            selectedSegmentIndex = 1
             filterFavProducts()
         default:
             break

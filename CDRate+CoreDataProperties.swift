@@ -2,7 +2,7 @@
 //  CDRate+CoreDataProperties.swift
 //  MVVM_Dummy
 //
-//  Created by Yogesh on 21/12/23.
+//  Created by Yogesh on 27/12/23.
 //
 //
 

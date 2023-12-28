@@ -2,7 +2,7 @@
 //  CDProduct+CoreDataProperties.swift
 //  MVVM_Dummy
 //
-//  Created by Yogesh on 21/12/23.
+//  Created by Yogesh on 27/12/23.
 //
 //
 
@@ -23,6 +23,7 @@ extension CDProduct {
     @NSManaged public var price: Double
     @NSManaged public var title: String?
     @NSManaged public var favourite: Bool
+    @NSManaged public var isDeleted_: Bool
     @NSManaged public var toRate: CDRate?
 
 }

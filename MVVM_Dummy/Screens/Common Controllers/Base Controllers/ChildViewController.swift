@@ -30,6 +30,7 @@ class ChildViewController: UIViewController {
     
     func configSearchController() {
         searchController.searchResultsUpdater = self
+        searchController.delegate = self
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Search"
         navigationItem.searchController = searchController
@@ -149,6 +150,7 @@ class ChildViewController: UIViewController {
         print("clicked...")
     }
     
+    
 }
 
 // MARK: - UITableViewDelegate & UITableViewDataSource
@@ -168,9 +170,16 @@ extension ChildViewController: UITableViewDelegate, UITableViewDataSource {
     // Implement other delegate and dataSource methods as needed
 }
 
-extension ChildViewController: UISearchResultsUpdating {
+extension ChildViewController: UISearchResultsUpdating, UISearchControllerDelegate {
     func updateSearchResults(for searchController: UISearchController) {
         let searchText = searchController.searchBar.text
         print("searchText: ",searchText)
+    }
+    
+    // MARK: - UISearchControllerDelegate
+    func didDismissSearchController(_ searchController: UISearchController) {
+        // This method is called when the search controller is dismissed
+        print("Search cancelled or completed")
+        // Handle the search cancellation here
     }
 }

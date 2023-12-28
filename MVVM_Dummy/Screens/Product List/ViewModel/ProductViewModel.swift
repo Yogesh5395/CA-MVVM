@@ -11,6 +11,9 @@ class ProductViewModel {
     
     var productsVM:[SingleProductViewModel] = []
     var filteredProductsVM: [SingleProductViewModel] = []
+    var deletedProductsVM: [SingleProductViewModel] = []
+    var nonDeletedProductsVM: [SingleProductViewModel] = []
+    var deletedFavProductsVM: [SingleProductViewModel] = []
     
     var eventHandler: ((_ event:Event) -> Void)? // Data Binding Closure
     
@@ -37,8 +40,47 @@ class ProductViewModel {
         self.productUseCase.updateProductFavouriteStatus(forID: id, toNewStatus: newStatus)
     }
     
+    func updateProductFavouriteDeleteStatus(forID id: Int16, toNewStatus newStatus: Bool) {
+        self.productUseCase.updateProductFavouriteDeleteStatus(forID: id, toNewStatus: newStatus)
+    }
+    
     func deleteProduct(forID id: Int16) -> Bool {
         self.productUseCase.deleteProduct(forID: id)
     }
 }
 
+extension ProductViewModel {
+    // Only without deleted Products means normal + favourite
+    func filterOutDeletedProducts() -> [SingleProductViewModel]{
+        nonDeletedProductsVM = productsVM.filter { product in
+            return !product.isDeleted_
+        }
+        
+        return nonDeletedProductsVM
+    }
+    
+    // Only Deleted + Favourite Products
+    func filterDeletedandFavouriteProducts()  -> [SingleProductViewModel] {
+        deletedFavProductsVM = productsVM.filter { product in
+            return product.isDeleted_ && product.favourite
+        }
+        
+        return deletedFavProductsVM
+    }
+    
+    // Only Deleted Products
+    func filterDeletedProducts() -> [SingleProductViewModel] {
+        deletedProductsVM = productsVM.filter { product in
+            return product.isDeleted_
+        }
+        
+        return deletedProductsVM
+    }
+    
+    // Only Favourite Products
+    func filterFavProducts() {
+        filteredProductsVM = productsVM.filter { product in
+            return product.favourite
+        }
+    }
+}
