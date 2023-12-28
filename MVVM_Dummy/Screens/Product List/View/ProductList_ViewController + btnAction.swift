@@ -17,43 +17,22 @@ extension ProductList_ViewController {
     
     // Only Favourite Products
     func filterFavProducts() {
-//        if let productsVM = self.viewModel?.filterOutDeletedProducts(){
-//            viewModel?.filteredProductsVM = productsVM.filter { product in
-//                return product.favourite
-//            }
-//        }
-//
-//        if let productsVM = self.viewModel?.filterDeletedProducts(){
-//            viewModel?.deletedProductsVM = productsVM.filter { product in
-//                return product.isDeleted_
-//            }
-//        }
+        if let productsVM = self.viewModel?.filterOutDeletedProducts(){
+            viewModel?.filteredProductsVM = productsVM.filter { product in
+                return product.favourite
+            }
+        }
+
+        if let productsVM = self.viewModel?.filterDeletedProducts(){
+            viewModel?.deletedProductsVM = productsVM.filter { product in
+                return product.isDeleted_
+            }
+        }
         
         self.childTableViewController.tableView.reloadData()
     }
     
     @objc func cellFavBtnTapped(sender: UIButton) {
-    
-        if selectedSegmentIndex == 1 {
-            let buttonIndex = sender.tag
-            if let product = self.viewModel?.deletedProductsVM[sender.tag] {
-                if product.isDeleted_ {
-                    if let image = UIImage(systemName: "heart.fill")?.withTintColor(.gray, renderingMode: .alwaysOriginal) {
-                        sender.setImage(image, for: .normal)
-                    }
-                    
-                    product.isDeleted_ = false
-                    self.viewModel?.updateProductFavouriteDeleteStatus(forID: product.id, toNewStatus: false)
-                    self.viewModel?.nonDeletedProductsVM.insert(product, at: 0)
-                    
-                    self.viewModel?.deletedProductsVM.remove(at: sender.tag)
-                    
-                    let indexPath = IndexPath(row: buttonIndex, section: 1)
-                    self.childTableViewController.tableView.reloadData()//deleteRows(at: [indexPath], with: .fade)
-                    return
-                }
-            }
-        }
         
         if let product = self.viewModel?.nonDeletedProductsVM[sender.tag] {
             product.favourite = !product.favourite
@@ -69,6 +48,7 @@ extension ProductList_ViewController {
             }
             
             self.viewModel?.updateProductFavouriteStatus(forID: product.id, toNewStatus: product.favourite)
+            self.childTableViewController.tableView.reloadData()
         }
     }
     

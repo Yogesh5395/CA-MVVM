@@ -30,8 +30,8 @@ class ProductList_ViewController: ChildViewController {
 
         // Do any additional setup after loading the view.
         
-        let documentDirectoryPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-        debugPrint(documentDirectoryPath[0])
+//        let documentDirectoryPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+//        debugPrint(documentDirectoryPath[0])
         
         childTableViewController.tableView.register(UINib(nibName: CellId_and_Nib_ProductList_ViewController.ProductCell, bundle: nil), forCellReuseIdentifier: CellId_and_Nib_ProductList_ViewController.ProductCell)
         

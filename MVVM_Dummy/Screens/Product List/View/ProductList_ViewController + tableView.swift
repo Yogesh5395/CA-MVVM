@@ -23,15 +23,19 @@ extension ProductList_ViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        if isSearchActive && selectedSegmentIndex == 1{
-            return viewModel?.deletedFavProductsVM.count ?? 0
-        }else if isSearchActive && selectedSegmentIndex == 0 {
-            return viewModel?.filteredProductsVM.count ?? 0
-        }
+//        if isSearchActive && selectedSegmentIndex == 1{
+//            return viewModel?.deletedFavProductsVM.count ?? 0
+//        }else if isSearchActive && selectedSegmentIndex == 0 {
+//            return viewModel?.filteredProductsVM.count ?? 0
+//        }
         
         if selectedSegmentIndex == 1 {
             if section == 1 {
-                return viewModel?.filterDeletedProducts().count ?? 0
+                
+                if self.viewModel?.deletedProductsVM.count ?? 0 > 0 {
+                    return 1
+                }
+                return 0
             }else {
                 
                 if let productsVM = self.viewModel?.filterOutDeletedProducts(){
@@ -56,17 +60,29 @@ extension ProductList_ViewController {
         cell.favouriteBtn.tag = indexPath.row
         cell.favouriteBtn.addTarget(self, action: #selector(cellFavBtnTapped(sender:)), for: .touchUpInside)
         
-        if isSearchActive && selectedSegmentIndex == 1{
-            cell.productVM = viewModel?.deletedFavProductsVM[indexPath.row]
-        }else {
+//        if isSearchActive && selectedSegmentIndex == 1{
+//            cell.productVM = viewModel?.deletedFavProductsVM[indexPath.row]
+//        }else {
             if indexPath.section == 0 {
                 cell.productVM = viewModel?.filteredProductsVM[indexPath.row]
+                return cell
             }else {
-                cell.productVM = viewModel?.deletedProductsVM[indexPath.row]
+                let cell1 = UITableViewCell(style: .subtitle, reuseIdentifier: nil)
+                cell1.detailTextLabel?.text = "deleted products: \(String(describing: viewModel?.deletedProductsVM.count))"
+                return cell1
             }
-        }
+//        }
         
-        return cell
+        
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if indexPath.section == 1 {
+            let viewController = DeletedProducts_ViewController()
+            viewController.viewModel = self.viewModel
+            self.navigationController?.pushViewController(viewController, animated: true)
+        }
     }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
