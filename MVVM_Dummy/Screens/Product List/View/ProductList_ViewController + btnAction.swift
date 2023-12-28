@@ -17,15 +17,16 @@ extension ProductList_ViewController {
     
     // Only Favourite Products
     func filterFavProducts() {
-        if let productsVM = self.viewModel?.filterOutDeletedProducts(){
-            viewModel?.filteredProductsVM = productsVM.filter { product in
-                return product.favourite
-            }
-        }
-
-        if let productsVM = self.viewModel?.filterDeletedProducts(){
+        
+        if let productsVM = self.viewModel?.filteredProductsVM{
             viewModel?.deletedProductsVM = productsVM.filter { product in
                 return product.isDeleted_
+            }
+        }
+        
+        if let productsVM = self.viewModel?.filteredProductsVM{
+            viewModel?.filteredProductsVM = productsVM.filter { product in
+                return product.favourite
             }
         }
         
@@ -45,9 +46,16 @@ extension ProductList_ViewController {
                 if let image = UIImage(systemName: "heart.fill")?.withTintColor(.gray, renderingMode: .alwaysOriginal) {
                     sender.setImage(image, for: .normal)
                 }
+                
+                if selectedSegmentIndex == 1 {
+                    self.viewModel?.filteredProductsVM.remove(at: sender.tag)
+                }
             }
             
             self.viewModel?.updateProductFavouriteStatus(forID: product.id, toNewStatus: product.favourite)
+            
+            let indexPath = IndexPath(row: sender.tag, section: 0)
+//            self.childTableViewController.tableView.deleteRows(at: [indexPath], with: .fade)
             self.childTableViewController.tableView.reloadData()
         }
     }

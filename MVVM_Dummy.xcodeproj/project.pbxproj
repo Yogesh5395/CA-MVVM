@@ -16,6 +16,7 @@
 		EC053FCB2B3D74D300C9D466 /* DeletedProducts_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC053FCA2B3D74D300C9D466 /* DeletedProducts_ViewController.swift */; };
 		EC053FCD2B3D76F600C9D466 /* DeletedProducts_ViewController + tableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC053FCC2B3D76F600C9D466 /* DeletedProducts_ViewController + tableView.swift */; };
 		EC053FCF2B3D780F00C9D466 /* DeletedProducts_ViewController + btnAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC053FCE2B3D780F00C9D466 /* DeletedProducts_ViewController + btnAction.swift */; };
+		EC053FD12B3D971E00C9D466 /* DeletedProducts_ViewController + SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC053FD02B3D971E00C9D466 /* DeletedProducts_ViewController + SearchBar.swift */; };
 		EC27AD892B22F8B700A4ED1F /* ProductList_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC27AD882B22F8B700A4ED1F /* ProductList_ViewController.swift */; };
 		EC27AD8D2B23027C00A4ED1F /* Storybord.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC27AD8C2B23027C00A4ED1F /* Storybord.swift */; };
 		EC27AD8F2B23032700A4ED1F /* ImageName.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC27AD8E2B23032700A4ED1F /* ImageName.swift */; };
@@ -119,6 +120,7 @@
 		EC053FCA2B3D74D300C9D466 /* DeletedProducts_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeletedProducts_ViewController.swift; sourceTree = "<group>"; };
 		EC053FCC2B3D76F600C9D466 /* DeletedProducts_ViewController + tableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DeletedProducts_ViewController + tableView.swift"; sourceTree = "<group>"; };
 		EC053FCE2B3D780F00C9D466 /* DeletedProducts_ViewController + btnAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DeletedProducts_ViewController + btnAction.swift"; sourceTree = "<group>"; };
+		EC053FD02B3D971E00C9D466 /* DeletedProducts_ViewController + SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DeletedProducts_ViewController + SearchBar.swift"; sourceTree = "<group>"; };
 		EC27AD882B22F8B700A4ED1F /* ProductList_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductList_ViewController.swift; sourceTree = "<group>"; };
 		EC27AD8C2B23027C00A4ED1F /* Storybord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storybord.swift; sourceTree = "<group>"; };
 		EC27AD8E2B23032700A4ED1F /* ImageName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageName.swift; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 				EC053FCA2B3D74D300C9D466 /* DeletedProducts_ViewController.swift */,
 				EC053FCE2B3D780F00C9D466 /* DeletedProducts_ViewController + btnAction.swift */,
 				EC053FCC2B3D76F600C9D466 /* DeletedProducts_ViewController + tableView.swift */,
+				EC053FD02B3D971E00C9D466 /* DeletedProducts_ViewController + SearchBar.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -725,6 +728,7 @@
 			files = (
 				ECF0EB302B300BEF00F4338D /* RateDataManager.swift in Sources */,
 				EC053FCF2B3D780F00C9D466 /* DeletedProducts_ViewController + btnAction.swift in Sources */,
+				EC053FD12B3D971E00C9D466 /* DeletedProducts_ViewController + SearchBar.swift in Sources */,
 				ECBD5BCC2B20AC4000AB2C48 /* ChildViewController.swift in Sources */,
 				ECF0CCD82B235FC500749C03 /* APIManager.swift in Sources */,
 				ECF0EB792B31B33B00F4338D /* AddProductUseCases.swift in Sources */,

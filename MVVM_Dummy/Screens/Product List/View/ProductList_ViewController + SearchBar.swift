@@ -19,24 +19,16 @@ extension ProductList_ViewController {
         
         guard let searchText = searchController.searchBar.text, !searchText.isEmpty else {
             
-            if let productsVM = self.viewModel?.filterOutDeletedProducts() {
+            if let productsVM = self.viewModel?.filteredProductsVM {
                 viewModel?.filteredProductsVM = productsVM
                 self.childTableViewController.tableView.reloadData()
             }
             return
         }
         
-        if selectedSegmentIndex == 0 {
-            if let productsVM = self.viewModel?.filterOutDeletedProducts() {
-                viewModel?.filteredProductsVM = productsVM.filter { product in
-                    return product.title.lowercased().contains(searchText.lowercased())
-                }
-            }
-        }else {
-            if let productsVM = self.viewModel?.filterDeletedandFavouriteProducts() {
-                viewModel?.deletedFavProductsVM = productsVM.filter { product in
-                    return product.title.lowercased().contains(searchText.lowercased())
-                }
+        if let productsVM = self.viewModel?.filteredProductsVM {
+            viewModel?.filteredProductsVM = productsVM.filter { product in
+                return product.title.lowercased().contains(searchText.lowercased())
             }
         }
         
@@ -48,9 +40,9 @@ extension ProductList_ViewController {
         print("Search cancelled")
         isSearchActive = false
         
-//        if let productsVM = self.viewModel?.filterOutDeletedProducts() {
-//            viewModel?.filteredProductsVM = productsVM
-//        }
+        if let productsVM = self.viewModel?.filterOutDeletedProducts() {
+            viewModel?.filteredProductsVM = productsVM
+        }
         
         self.childTableViewController.tableView.reloadData()
     }
