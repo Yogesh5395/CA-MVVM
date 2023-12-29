@@ -18,7 +18,7 @@ extension ProductList_ViewController {
     // Only Favourite Products
     func filterFavProducts() {
         
-        if let productsVM = self.viewModel?.nonDeletedProductsVM{
+        if let productsVM = self.viewModel?.productsVM{
             viewModel?.deletedProductsVM = productsVM.filter { product in
                 return product.isDeleted_
             }

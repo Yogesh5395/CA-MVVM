@@ -41,6 +41,7 @@ extension DeletedProducts_ViewController {
             if let product = self.viewModel?.deletedFavFilterProductsVM[indexPath.row] {
                 if let status = self.viewModel?.deleteProduct(forID: product.id), status {
                     product.isDeleted_ = false
+                    self.viewModel?.fetchProductList()
                     self.viewModel?.deletedProductsVM.remove(at: indexPath.row)
                     self.viewModel?.deletedFavFilterProductsVM.remove(at: indexPath.row)
                     tableView.deleteRows(at: [indexPath], with: .fade)

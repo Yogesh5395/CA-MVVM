@@ -82,6 +82,7 @@ extension ProductList_ViewController {
                     }else {  // Inside the ALL tab, permanant deleting the product which is not favourite
                         if let status = self.viewModel?.deleteProduct(forID: product.id), status {
                             product.isDeleted_ = true
+                            self.viewModel?.fetchProductList()
                             self.viewModel?.nonDeletedProductsVM.remove(at: indexPath.row)
                             self.viewModel?.filteredProductsVM.remove(at: indexPath.row)
                             tableView.deleteRows(at: [indexPath], with: .fade)
