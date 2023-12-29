@@ -22,8 +22,9 @@ extension DeletedProducts_ViewController {
                 product.isDeleted_ = false
                 self.viewModel?.updateProductFavouriteDeleteStatus(forID: product.id, toNewStatus: false)
                 self.viewModel?.nonDeletedProductsVM.insert(product, at: 0)
-                
+                self.viewModel?.filteredProductsVM.insert(product, at: 0)
                 self.viewModel?.deletedProductsVM.remove(at: sender.tag)
+                self.viewModel?.deletedFavFilterProductsVM.remove(at: sender.tag)
                 
                 let indexPath = IndexPath(row: buttonIndex, section: 1)
                 self.tableView.reloadData()

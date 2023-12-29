@@ -17,7 +17,7 @@ extension DeletedProducts_ViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return viewModel?.filteredProductsVM.count ?? 0
+        return viewModel?.deletedFavFilterProductsVM.count ?? 0
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -26,7 +26,7 @@ extension DeletedProducts_ViewController {
         cell.favouriteBtn.tag = indexPath.row
         cell.favouriteBtn.addTarget(self, action: #selector(cellFavBtnTapped(sender:)), for: .touchUpInside)
         
-        cell.productVM = viewModel?.filteredProductsVM[indexPath.row]
+        cell.productVM = viewModel?.deletedFavFilterProductsVM[indexPath.row]
         
         return cell
     }
@@ -38,10 +38,11 @@ extension DeletedProducts_ViewController {
     // Swipe to delete
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete { // Swipe delete
-            if let product = self.viewModel?.filteredProductsVM[indexPath.row] {
+            if let product = self.viewModel?.deletedFavFilterProductsVM[indexPath.row] {
                 if let status = self.viewModel?.deleteProduct(forID: product.id), status {
-                    product.isDeleted_ = true
+                    product.isDeleted_ = false
                     self.viewModel?.deletedProductsVM.remove(at: indexPath.row)
+                    self.viewModel?.deletedFavFilterProductsVM.remove(at: indexPath.row)
                     tableView.deleteRows(at: [indexPath], with: .fade)
                 }
             }

@@ -41,7 +41,8 @@ class ProductList_ViewController: ChildViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-
+        filterFavProducts()
+        self.childTableViewController.tableView.reloadData()
     }
     
     func configuration(){

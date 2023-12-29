@@ -14,6 +14,7 @@ class ProductViewModel {
     var deletedProductsVM: [SingleProductViewModel] = []
     var nonDeletedProductsVM: [SingleProductViewModel] = []
     var deletedFavProductsVM: [SingleProductViewModel] = []
+    var deletedFavFilterProductsVM: [SingleProductViewModel] = []
     
     var eventHandler: ((_ event:Event) -> Void)? // Data Binding Closure
     

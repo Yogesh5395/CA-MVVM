@@ -17,14 +17,14 @@ extension DeletedProducts_ViewController: UISearchResultsUpdating, UISearchContr
         guard let searchText = searchController.searchBar.text, !searchText.isEmpty else {
             
             if let productsVM = self.viewModel?.deletedProductsVM {
-                viewModel?.filteredProductsVM = productsVM
+                viewModel?.deletedFavFilterProductsVM = productsVM
                 self.tableView.reloadData()
             }
             return
         }
         
         if let productsVM = self.viewModel?.deletedProductsVM {
-            viewModel?.filteredProductsVM = productsVM.filter { product in
+            viewModel?.deletedFavFilterProductsVM = productsVM.filter { product in
                 return product.title.lowercased().contains(searchText.lowercased())
             }
         }
@@ -39,7 +39,7 @@ extension DeletedProducts_ViewController: UISearchResultsUpdating, UISearchContr
         // Handle the search cancellation here
         
         if let productsVM = self.viewModel?.deletedProductsVM {
-            viewModel?.filteredProductsVM = productsVM
+            viewModel?.deletedFavFilterProductsVM = productsVM
         }
         
         self.tableView.reloadData()

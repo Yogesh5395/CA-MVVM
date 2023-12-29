@@ -18,7 +18,7 @@ extension ProductList_ViewController {
     // Only Favourite Products
     func filterFavProducts() {
         
-        if let productsVM = self.viewModel?.filteredProductsVM{
+        if let productsVM = self.viewModel?.nonDeletedProductsVM{
             viewModel?.deletedProductsVM = productsVM.filter { product in
                 return product.isDeleted_
             }
@@ -54,7 +54,7 @@ extension ProductList_ViewController {
             
             self.viewModel?.updateProductFavouriteStatus(forID: product.id, toNewStatus: product.favourite)
             
-            let indexPath = IndexPath(row: sender.tag, section: 0)
+//            let indexPath = IndexPath(row: sender.tag, section: 0)
 //            self.childTableViewController.tableView.deleteRows(at: [indexPath], with: .fade)
             self.childTableViewController.tableView.reloadData()
         }

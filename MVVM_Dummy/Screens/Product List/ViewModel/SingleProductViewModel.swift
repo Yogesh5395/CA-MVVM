@@ -10,7 +10,7 @@ import Foundation
 class SingleProductViewModel {
     
     var id: Int16 {
-        return product.id
+        return Int16(product.id)
     }
     
     var favourite: Bool {

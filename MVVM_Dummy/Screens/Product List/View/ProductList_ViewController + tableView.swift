@@ -82,6 +82,7 @@ extension ProductList_ViewController {
                     }else {  // Inside the ALL tab, permanant deleting the product which is not favourite
                         if let status = self.viewModel?.deleteProduct(forID: product.id), status {
                             product.isDeleted_ = true
+                            self.viewModel?.nonDeletedProductsVM.remove(at: indexPath.row)
                             self.viewModel?.filteredProductsVM.remove(at: indexPath.row)
                             tableView.deleteRows(at: [indexPath], with: .fade)
                         }
@@ -94,7 +95,9 @@ extension ProductList_ViewController {
                             self.viewModel?.updateProductFavouriteDeleteStatus(forID: product.id, toNewStatus: product.favourite)
                             product.isDeleted_ = product.favourite
                             self.viewModel?.filteredProductsVM.remove(at: indexPath.row)
-                            tableView.deleteRows(at: [indexPath], with: .fade)
+                            self.viewModel?.deletedProductsVM.insert(product, at: 0)
+//                            tableView.deleteRows(at: [indexPath], with: .fade)
+                            tableView.reloadData()
                         }
                     }
                 }

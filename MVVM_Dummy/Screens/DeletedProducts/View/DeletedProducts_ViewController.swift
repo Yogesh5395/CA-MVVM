@@ -20,7 +20,7 @@ class DeletedProducts_ViewController: UITableViewController {
         self.navigationItem.title = "Deleted Products"
         
         if let products = self.viewModel?.deletedProductsVM {
-            self.viewModel?.filteredProductsVM = products
+            self.viewModel?.deletedFavFilterProductsVM = products
         }
         
         self.tableView.register(UINib(nibName: CellId_and_Nib_ProductList_ViewController.ProductCell, bundle: nil), forCellReuseIdentifier: CellId_and_Nib_ProductList_ViewController.ProductCell)
