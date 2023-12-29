@@ -92,7 +92,7 @@ class ProductList_ViewController: ChildViewController {
         switch sender.selectedSegmentIndex {
         case 0:
             selectedSegmentIndex = 0
-            if let productsVM = self.viewModel?.nonDeletedProductsVM {
+            if let productsVM = self.viewModel?.filterOutDeletedProducts() {
                 viewModel?.filteredProductsVM = productsVM
                 self.childTableViewController.tableView.reloadData()
             }

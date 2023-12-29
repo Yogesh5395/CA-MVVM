@@ -72,10 +72,11 @@ extension ProductList_ViewController {
             // Update your data source and delete the row
             
             if selectedSegmentIndex == 0 { // Inside the ALL tab, 
-                if let product = self.viewModel?.nonDeletedProductsVM[indexPath.row] {
+                if let product = self.viewModel?.filteredProductsVM[indexPath.row] {
                     if product.favourite { // Inside the ALL tab, temparay deleting the favourite product and updating the delete status
                         self.viewModel?.updateProductFavouriteDeleteStatus(forID: product.id, toNewStatus: product.favourite)
                         product.isDeleted_ = product.favourite
+//                        self.viewModel?.deletedProductsVM.insert(product, at: 0)
                         self.viewModel?.filteredProductsVM.remove(at: indexPath.row)
                         tableView.deleteRows(at: [indexPath], with: .fade)
                     }else {  // Inside the ALL tab, permanant deleting the product which is not favourite
