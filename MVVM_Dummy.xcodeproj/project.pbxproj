@@ -28,6 +28,7 @@
 		ECAB38BA2B298E4D0058833B /* ProductService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAB38B92B298E4D0058833B /* ProductService.swift */; };
 		ECAB38BC2B2996E30058833B /* ProductRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAB38BB2B2996E30058833B /* ProductRepository.swift */; };
 		ECAB38BE2B2998B10058833B /* ProductUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAB38BD2B2998B10058833B /* ProductUseCase.swift */; };
+		ECB161E02B4FF2F000A3AF8B /* ProductList_Fetch_Validation_unitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB161DF2B4FF2F000A3AF8B /* ProductList_Fetch_Validation_unitTest.swift */; };
 		ECBD5B862B2074BF00AB2C48 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBD5B852B2074BF00AB2C48 /* AppDelegate.swift */; };
 		ECBD5B882B2074BF00AB2C48 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBD5B872B2074BF00AB2C48 /* SceneDelegate.swift */; };
 		ECBD5B8D2B2074BF00AB2C48 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECBD5B8B2B2074BF00AB2C48 /* Main.storyboard */; };
@@ -132,6 +133,7 @@
 		ECAB38B92B298E4D0058833B /* ProductService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductService.swift; sourceTree = "<group>"; };
 		ECAB38BB2B2996E30058833B /* ProductRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductRepository.swift; sourceTree = "<group>"; };
 		ECAB38BD2B2998B10058833B /* ProductUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductUseCase.swift; sourceTree = "<group>"; };
+		ECB161DF2B4FF2F000A3AF8B /* ProductList_Fetch_Validation_unitTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductList_Fetch_Validation_unitTest.swift; sourceTree = "<group>"; };
 		ECBD5B822B2074BF00AB2C48 /* MVVM_Dummy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVVM_Dummy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECBD5B852B2074BF00AB2C48 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ECBD5B872B2074BF00AB2C48 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -337,6 +339,7 @@
 			isa = PBXGroup;
 			children = (
 				ECBD5B9F2B2074C000AB2C48 /* MVVM_DummyTests.swift */,
+				ECB161DF2B4FF2F000A3AF8B /* ProductList_Fetch_Validation_unitTest.swift */,
 			);
 			path = MVVM_DummyTests;
 			sourceTree = "<group>";
@@ -788,6 +791,7 @@
 				ECF0EB762B31B20F00F4338D /* AddProductRepository.swift in Sources */,
 				ECF0EB552B317CA100F4338D /* AddProduct_ViewController.swift in Sources */,
 				ECF0EB6A2B31ADCA00F4338D /* AddProductViewModel.swift in Sources */,
+				ECB161E02B4FF2F000A3AF8B /* ProductList_Fetch_Validation_unitTest.swift in Sources */,
 				ECF0EB7A2B31B33B00F4338D /* AddProductUseCases.swift in Sources */,
 				ECF0EB2D2B300BCA00F4338D /* ProductDataManager.swift in Sources */,
 				ECF0EAA62B2C3ACC00F4338D /* PersistentStorage.swift in Sources */,

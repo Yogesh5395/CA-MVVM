@@ -31,6 +31,7 @@ class ProductRepository {
         }
     }
     
+    
     func callAPI(completion: @escaping(Result<[Product], DataError>) -> Void) {
         productServiceImplementation.fetch { result in
             switch result {
