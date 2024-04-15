@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Product: Codable {
+struct Product: Codable {
     let id: Int
     let image: String
     let title: String
@@ -31,7 +31,7 @@ class Product: Codable {
     }
 }
 
-class Rate: Codable {
+struct Rate: Codable {
     let rate: Double
     let count: Int
     
