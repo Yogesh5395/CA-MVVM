@@ -19,7 +19,6 @@ typealias ResultHandler<T> = (Result<T, DataError>) -> Void
 
 class APIManager {
     
-//    static let shared          = APIManager()
     private var networkhandler = NetworkHandler()
     private var reponseHandler = ResponseHandler()
     
