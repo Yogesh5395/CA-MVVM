@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Combine
 
 class ProductViewModel {
     
@@ -23,19 +24,36 @@ class ProductViewModel {
         self.productUseCase = productUseCase
     }
     
+    // Combine subjects
+    var eventHandlerSubject = PassthroughSubject<Event, Never>()
+    
     func fetchProductList() {
-        self.eventHandler?(.loading)
+        eventHandlerSubject.send(.loading)
         self.productUseCase.fetch() { response in
-            self.eventHandler?(.stopLoading)
+            self.eventHandlerSubject.send(.stopLoading)
             switch response {
             case .success(let products):
-                self.productsVM = products.map{SingleProductViewModel(product: $0)}
-                self.eventHandler?(.dataLoad)
+                self.productsVM = products.map { SingleProductViewModel(product: $0) }
+                self.eventHandlerSubject.send(.dataLoad)
             case .failure(let error):
-                self.eventHandler?(.error(error))
+                self.eventHandlerSubject.send(.error(error))
             }
         }
     }
+    
+//    func fetchProductList() {
+//        self.eventHandler?(.loading)
+//        self.productUseCase.fetch() { response in
+//            self.eventHandler?(.stopLoading)
+//            switch response {
+//            case .success(let products):
+//                self.productsVM = products.map{SingleProductViewModel(product: $0)}
+//                self.eventHandler?(.dataLoad)
+//            case .failure(let error):
+//                self.eventHandler?(.error(error))
+//            }
+//        }
+//    }
     
     func updateProductFavouriteStatus(forID id: Int16, toNewStatus newStatus: Bool) {
         self.productUseCase.updateProductFavouriteStatus(forID: id, toNewStatus: newStatus)

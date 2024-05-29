@@ -7,6 +7,10 @@
 
 import Foundation
 
+protocol NetworkManager {
+    func requestItems<T: Codable>(modelType: T.Type, type: EndPoints, completion: @escaping ResultHandler<T>)
+}
+
 enum DataError: Error {
     case invalidRespose
     case invalidUrl
@@ -17,7 +21,7 @@ enum DataError: Error {
 
 typealias ResultHandler<T> = (Result<T, DataError>) -> Void
 
-class APIManager {
+class APIManager: NetworkManager {
     
     private var networkhandler = NetworkHandler()
     private var reponseHandler = ResponseHandler()
@@ -42,7 +46,7 @@ class APIManager {
         }
         
         request.allHTTPHeaderFields = type.headers
-        
+        //reques: https://fakestoreapi.com/products
         networkhandler.requestDataAPI(url: request) { result in
             
             switch result {

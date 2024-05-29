@@ -6,13 +6,14 @@
 //
 
 import UIKit
+import Combine
 
 class ProductList_ViewController: ChildViewController {
     
     @IBOutlet weak var bottomView: UIView!
     
     var viewModel: ProductViewModel?
-    
+    var cancellables = Set<AnyCancellable>()
     override var isEditing: Bool {
         didSet {
             // Your custom code for handling changes in editing state
@@ -62,31 +63,58 @@ class ProductList_ViewController: ChildViewController {
         viewModel?.fetchProductList()
     }
     
+//    // Data binding event observe karega - communication
+//    func obsereEvent() {
+//        
+//        viewModel?.eventHandler = { [weak self] event in
+//            guard let self else {return}
+//            
+//            switch event {
+//            case .loading:
+//                print("product loading ...")
+//            case .stopLoading:
+//                print("loading completed ...")
+//            case .dataLoad:
+//                DispatchQueue.main.async {
+//                    if let products = self.viewModel?.filterOutDeletedProducts(){
+//                        productCount = products.count // Set product count globally
+//                        self.viewModel?.filteredProductsVM =  products
+//                        self.childTableViewController.tableView.reloadData()
+//                    }
+//                }
+//            case .error(let error):
+//                print(error!)
+//            }
+//            
+//        }
+//    }
+    
     // Data binding event observe karega - communication
-    func obsereEvent() {
-        
-        viewModel?.eventHandler = { [weak self] event in
-            guard let self else {return}
-            
-            switch event {
-            case .loading:
-                print("product loading ...")
-            case .stopLoading:
-                print("loading completed ...")
-            case .dataLoad:
-                DispatchQueue.main.async {
-                    if let products = self.viewModel?.filterOutDeletedProducts(){
-                        productCount = products.count // Set product count globally
-                        self.viewModel?.filteredProductsVM =  products
-                        self.childTableViewController.tableView.reloadData()
+        func obsereEvent() {
+            viewModel?.eventHandlerSubject
+                .receive(on: DispatchQueue.main)
+                .sink { event in
+                    
+                    switch event {
+                    case .loading:
+                        print("product loading ...")
+                    case .stopLoading:
+                        print("loading completed ...")
+                    case .dataLoad:
+                        print("dataLoad dataLoad ...")
+                        DispatchQueue.main.async {
+                            if let products = self.viewModel?.filterOutDeletedProducts(){
+                                productCount = products.count // Set product count globally
+                                self.viewModel?.filteredProductsVM =  products
+                                self.childTableViewController.tableView.reloadData()
+                            }
+                        }
+                    case .error(let error):
+                        print(error!)
                     }
                 }
-            case .error(let error):
-                print(error!)
-            }
-            
+                .store(in: &cancellables)
         }
-    }
     
     override func segmentChanged(_ sender: UISegmentedControl) {
         // Handle the segment change

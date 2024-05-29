@@ -9,9 +9,9 @@ import Foundation
 
 class ProductServiceImpl: ProductService {
     
-    let apiManager: APIManager
+    let apiManager: NetworkManager
     
-    init(apiManager: APIManager) {
+    init(apiManager: NetworkManager) {
         self.apiManager = apiManager
     }
     

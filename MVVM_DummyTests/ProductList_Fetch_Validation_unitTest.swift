@@ -10,43 +10,51 @@ import XCTest
 
 final class ProductList_Fetch_Validation_unitTest: XCTestCase {
     
-    var viewModel: ProductViewModel!
-//    var mockService: MockService!
-//
-//    override func setUp() {
-//        super.setUp()
-//        mockService = MockService()
-//        viewModel = ProductListViewModel(service: mockService)
-//    }
-//
-//    override func tearDown() {
-//        viewModel = nil
-//        mockService = nil
-//        super.tearDown()
-//    }
-    
-    func testFetchProductList() {
-        let expectation = XCTestExpectation(description: "Fetch Product List")
-        viewModel.fetchProductList()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            expectation.fulfill()
-        }
-        wait(for: [expectation], timeout: 1)
-        XCTAssertNotNil(viewModel.productsVM)
-        XCTAssertEqual(viewModel.productsVM.count, 2)
+    var viewModel:  MVVM_Dummy.ProductViewModel!
+
+    override func setUp() {
+        super.setUp()
+        
+        // Use the mock service implementation
+        let apiManager = MVVM_Dummy.ProductService_MockData()
+        let serviceImplementation = MVVM_Dummy.ProductServiceImpl(apiManager: apiManager)
+        let persistentStorageObj = MVVM_Dummy.PersistentStorage(inMemory: true)
+        let productDataManager = MVVM_Dummy.ProductDataManager(persistentStorageObj: persistentStorageObj)
+        let productRepository = MVVM_Dummy.ProductRepository(productServiceImplementation: serviceImplementation, productDataManager: productDataManager)
+        let productUseCase = MVVM_Dummy.ProductUseCase(repository: productRepository)
+        var viewModel = MVVM_Dummy.ProductViewModel(productUseCase: productUseCase)
+
     }
     
-    func testFetchProductListFailure() {
-//        mockService.shouldReturnError = true
-        let expectation = XCTestExpectation(description: "Fetch Product List")
-        viewModel.fetchProductList()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            expectation.fulfill()
+    func testFetchProductList() {
+        // Given
+        let expectation = XCTestExpectation(description: "Fetch product list")
+        
+        // When
+        viewModel.eventHandler = { event in
+            switch event {
+            case .dataLoad:
+                // Then
+                XCTAssertNotNil(self.viewModel.productsVM, "Products should not be nil")
+                XCTAssertEqual(self.viewModel.productsVM.count, 20, "There should be 20 products")
+                expectation.fulfill()
+            case .error(let error):
+                XCTFail("Error fetching products: \(error?.localizedDescription ?? "")")
+            default:
+                break
+            }
         }
-        wait(for: [expectation], timeout: 1)
-        XCTAssertNil(viewModel.productsVM)
-        XCTAssertNotNil(viewModel.eventHandler)
-//        XCTAssertEqual(viewModel.eventHandler(.error()), "Error")
+        
+        viewModel.fetchProductList()
+        
+        // Wait for the expectation to be fulfilled
+        wait(for: [expectation], timeout: 5.0)
+    }
+    
+
+    override func tearDown() {
+        viewModel = nil
+        super.tearDown()
     }
     
 }
