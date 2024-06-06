@@ -10,12 +10,12 @@ import Combine
 
 class ProductViewModel {
     
-    var productsVM:[SingleProductViewModel] = []
-    var filteredProductsVM: [SingleProductViewModel] = []
-    var deletedProductsVM: [SingleProductViewModel] = []
-    var nonDeletedProductsVM: [SingleProductViewModel] = []
-    var deletedFavProductsVM: [SingleProductViewModel] = []
-    var deletedFavFilterProductsVM: [SingleProductViewModel] = []
+    @Published var productsVM:[SingleProductViewModel] = []
+    @Published var filteredProductsVM: [SingleProductViewModel] = []
+    @Published var deletedProductsVM: [SingleProductViewModel] = []
+    @Published var nonDeletedProductsVM: [SingleProductViewModel] = []
+    @Published var deletedFavProductsVM: [SingleProductViewModel] = []
+    @Published var deletedFavFilterProductsVM: [SingleProductViewModel] = []
     
     var eventHandler: ((_ event:Event) -> Void)? // Data Binding Closure
     
@@ -39,6 +39,10 @@ class ProductViewModel {
                 }
             } receiveValue: { products in
                 self.productsVM = products.map { SingleProductViewModel(product: $0) }
+                let products = self.filterOutDeletedProducts()
+                productCount = products.count // Set product count globally
+                self.filteredProductsVM =  products
+                
                 self.eventHandlerSubject.send(.dataLoad)
             }
             .store(in: &cancellables) // Store the cancellable to manage the subscription lifecycle

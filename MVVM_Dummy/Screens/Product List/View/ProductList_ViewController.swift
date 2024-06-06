@@ -65,6 +65,14 @@ class ProductList_ViewController: ChildViewController {
     
     // Data binding event observe karega - communication
         func obsereEvent() {
+            
+            viewModel?.$filteredProductsVM
+                .receive(on:DispatchQueue.main)
+                .sink(receiveValue: { [weak self] _ in
+                    self?.childTableViewController.tableView.reloadData()
+                })
+                .store(in: &cancellables)
+            
             viewModel?.eventHandlerSubject
                 .receive(on: DispatchQueue.main)
                 .sink { event in
@@ -76,13 +84,6 @@ class ProductList_ViewController: ChildViewController {
                         print("loading completed ...")
                     case .dataLoad:
                         print("dataLoad dataLoad ...")
-                        DispatchQueue.main.async {
-                            if let products = self.viewModel?.filterOutDeletedProducts(){
-                                productCount = products.count // Set product count globally
-                                self.viewModel?.filteredProductsVM =  products
-                                self.childTableViewController.tableView.reloadData()
-                            }
-                        }
                     case .error(let error):
                         print(error!)
                     }
@@ -97,7 +98,7 @@ class ProductList_ViewController: ChildViewController {
             selectedSegmentIndex = 0
             if let productsVM = self.viewModel?.filterOutDeletedProducts() {
                 viewModel?.filteredProductsVM = productsVM
-                self.childTableViewController.tableView.reloadData()
+//                self.childTableViewController.tableView.reloadData()// using viewModel?.$filteredProductsVM to update tableview
             }
         case 1:
             selectedSegmentIndex = 1
