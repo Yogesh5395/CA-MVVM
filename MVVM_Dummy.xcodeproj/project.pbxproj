@@ -309,7 +309,7 @@
 		ECBD5B792B2074BF00AB2C48 = {
 			isa = PBXGroup;
 			children = (
-				ECBD5B842B2074BF00AB2C48 /* MVVM_Dummy */,
+				ECBD5B842B2074BF00AB2C48 /* MVVM_Dummy+Combine */,
 				ECBD5B9E2B2074C000AB2C48 /* MVVM_DummyTests */,
 				ECBD5BA82B2074C000AB2C48 /* MVVM_DummyUITests */,
 				ECBD5B832B2074BF00AB2C48 /* Products */,
@@ -326,7 +326,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		ECBD5B842B2074BF00AB2C48 /* MVVM_Dummy */ = {
+		ECBD5B842B2074BF00AB2C48 /* MVVM_Dummy+Combine */ = {
 			isa = PBXGroup;
 			children = (
 				ECBD5BB82B20757900AB2C48 /* Application */,
@@ -343,7 +343,7 @@
 				ECBD5B962B2074C000AB2C48 /* Info.plist */,
 				ECBD5B8E2B2074BF00AB2C48 /* MVVM_Dummy.xcdatamodeld */,
 			);
-			path = MVVM_Dummy;
+			path = "MVVM_Dummy+Combine";
 			sourceTree = "<group>";
 		};
 		ECBD5B9E2B2074C000AB2C48 /* MVVM_DummyTests */ = {
