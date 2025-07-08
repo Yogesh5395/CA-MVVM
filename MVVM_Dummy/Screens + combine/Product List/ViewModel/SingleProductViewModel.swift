@@ -7,6 +7,15 @@
 
 import Foundation
 
+/*
+ SingleProductModel is a presentational view model for each item. It's optional, but useful for:
+
+ Formatting
+
+ Computed properties
+
+ UI logic separation
+ */
 class SingleProductViewModel {
     
     var id: Int16 {

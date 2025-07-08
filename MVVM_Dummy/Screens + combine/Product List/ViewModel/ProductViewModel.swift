@@ -9,7 +9,6 @@ import Foundation
 import Combine
 
 class ProductViewModel {
-    
     @Published var productsVM:[SingleProductViewModel] = []
     @Published var filteredProductsVM: [SingleProductViewModel] = []
     @Published var deletedProductsVM: [SingleProductViewModel] = []
@@ -46,7 +45,6 @@ class ProductViewModel {
                 self.eventHandlerSubject.send(.dataLoad)
             }
             .store(in: &cancellables) // Store the cancellable to manage the subscription lifecycle
-        
     }
     
     func updateProductFavouriteStatus(forID id: Int16, toNewStatus newStatus: Bool) {
